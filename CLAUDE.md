@@ -44,7 +44,8 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 
 ## Facts to keep accurate
 
-- **Smartscope:** version 1.1, download https://github.com/claeslanng/Smartscope/releases/latest
+- **Smartscope:** version 1.1, download https://github.com/claeslanng/Smartscope/releases/latest.
+  Resizes up to 3000 × 1600 (the owner wants this promoted: second monitor, TV, tablet).
 - **PitchScope:** version 0.9 beta (a pre-release, so link to `/releases`, not `/releases/latest`), repo `claeslanng/Pitchscope`
 - **Flow FMX Host:** version 0.3, download https://github.com/claeslanng/flow-fmx-host/releases/latest
 - **Requirements:** Windows 10 or 11 (64-bit), a VST3 host. Flow FMX Host also needs WebView2.
@@ -72,9 +73,10 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- More real FL Studio screenshots, or a short screen recording, for Smartscope. One
-  real shot is on the page (`assets/img/smartscope/fl-studio.jpg`, under the sidechain
-  steps); the hero, zoom, themes and settings images are still synthetic renders.
+- More real FL Studio screenshots, or a short screen recording, for Smartscope. Two
+  real shots are on the page: `fl-studio.jpg` (under the sidechain steps) and
+  `fullscreen.jpg` ("Make it as big as you like"). The hero, zoom, themes and settings
+  images are still synthetic renders.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
