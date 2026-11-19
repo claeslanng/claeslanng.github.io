@@ -69,7 +69,27 @@ file in `flow-fmx-host/downloads/` and update the version and size on the card.
 
 ## Screenshots
 
-Ask the owner for real captures from FL Studio: plugin window enlarged to about 2000 px
+**Smartscope's images are rendered, not captured** (since 1.2.0). Smartscope's
+RenderTest feeds the owner's real kick and bass audio through the real plugin UI and renders
+it at 2x. In the Smartscope repo:
+
+```bash
+cmake -B build -DCMAKE_BUILD_TYPE=Release -DSMARTSCOPE_BUILD_TESTS=ON
+cmake --build build --target RenderTest
+build/RenderTest_artefacts/Release/RenderTest --site /tmp/renders
+python3 Tests/make_site_images.py /tmp/renders --readme docs/images \
+    --site ../claeslanng.github.io/assets/img/smartscope
+```
+
+That writes `main.webp`, `zoom.webp` (2280 × 784, lossless), `main-share.jpg` (1200 px),
+`theme-*.webp` (1140 px), `settings.webp` (2x: its `width`/`height` attributes are half
+its pixel size, 822 × 302, so it's sharp on high-density screens) and `drag-loop.mp4` +
+poster (1280 × 440, 6.4 s, slides one beat to the next kick and back, so it loops without
+a seam). Captions name the layer colors for each theme (Graphite orange/light gray,
+Midnight cyan/white, Phosphor amber/green, Daylight deep blue/near-black). If the renders
+change what's shown, change the captions too. `fullscreen.webp` is still a hand capture.
+
+For other plugins, or a hand capture: ask the owner for real captures from FL Studio: plugin window enlarged to about 2000 px
 wide (or Windows scaling at 200%), Hold pressed, mouse pointer out of the window, saved as
 PNG and attached in the chat (Gyazo links can't be downloaded from the workspace). Crop off
 FL Studio's wrapper bar and border (about 74 px at the top and 5–6 px at the sides and
@@ -96,25 +116,14 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- All Smartscope images are real captures (`main.webp`, `zoom.webp`, `theme-*.webp`,
-  `settings.webp`, `fullscreen.webp` for "Make it as big as you like"). They were taken
-  with 1.1, so the header lacks 1.2's corners (scope only) button, and `settings.webp`
-  lacks the hex boxes and the dice button. Redo them with 1.2 (by hand or with the
-  RenderTest plan below).
-- The drag loop is cut from a Gyazo clip (1280 px, end card removed, a short blend at the
-  seam). A new recording that starts and ends on the same view, made with the Windows
-  Snipping Tool at full size, would loop perfectly.
+- Smartscope's images are rendered from 1.2.0 (see Screenshots). Only `fullscreen.webp`
+  ("Make it as big as you like") is a hand capture from 1.1, without the corners button.
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
-- **Planned after Smartscope 1.2.0: automatic screenshots.** Smartscope's
-  `Tests/RenderTest.cpp` already renders the real UI to PNG with a fake host. The plan is
-  to feed it the owner's real audio (branch `screenshot-audio` in `claeslanng/smartscope`,
-  `Tests/audio/`: kick for sidechain 1, ducked bass for the main input, 4 bars at 128 BPM),
-  render at 2x the main shot, zoom, the four themes (with different layer colours per
-  theme: Graphite orange/grey, Midnight cyan/white, Phosphor amber/green, Daylight deep
-  blue or red/near-black), settings, and frames for a perfectly looping drag video, then
-  possibly a GitHub Action that updates this site on each release. Wait for the owner to
-  say 1.2.0 is merged before touching Smartscope's `main`.
+- **Automatic screenshots on release (optional, not set up).** The rendering works (see
+  Screenshots); a GitHub Actions job in the Smartscope repo could run it on each release
+  and push the images and version number here. It needs a token or deploy key with write
+  access to this repo, added by the owner as a secret in the Smartscope repo.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
