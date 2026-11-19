@@ -41,7 +41,9 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
   asked for it, 2026-11-19). All respect reduced motion (the loops show controls instead
   of playing) and pause off-screen; one script handles every `.demo-video`. The owner asked for video loops to stay small and subtle, always with a
   line saying what they show. Use a muted looping MP4, not a GIF (a GIF of the same loop
-  was 13 times bigger and limited to 256 colours).
+  was 13 times bigger and limited to 256 colours). Save loop posters as lossy WebP
+  (quality ~88, sharp YUV): they load with the page, before anything plays, and lossless
+  posters were 155–180 KB each against 47 KB.
 - **Screenshots** get a crisp 1 px outline (`--shot-shadow`), never a soft drop shadow:
   the owner found the blurred shadows looked low quality (banding on the dark pages).
 - **Smartscope's name in its two big headings** (the page's `<h1>` and the home-page
