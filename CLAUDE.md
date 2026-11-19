@@ -56,6 +56,16 @@ When a plugin gets a new release, update its version on its page (hero fine prin
 install file name, and the JSON-LD `softwareVersion`). For a new .fmx version, replace the
 file in `flow-fmx-host/downloads/` and update the version and size on the card.
 
+## Screenshots
+
+Ask the owner for real captures from FL Studio: plugin window enlarged to about 2000 px
+wide (or Windows scaling at 200%), Hold pressed, mouse pointer out of the window, saved as
+PNG and attached in the chat (Gyazo links can't be downloaded from the workspace). Crop off
+FL Studio's wrapper bar and border (about 74 px at the top and 5–6 px at the sides and
+bottom). Save as lossless WebP at full size; the `width`/`height` attributes are the
+pixel size. Social previews (`og:image`, JSON-LD) use a 1200 px JPEG, since some sites
+don't read WebP.
+
 ## Checking changes
 
 Serve locally with `python3 -m http.server`, then take desktop (1440 px) and mobile
@@ -72,8 +82,9 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- Real FL Studio screenshots or a short screen recording for Smartscope (the current
-  images are synthetic renders).
+- Real FL Studio screenshots for the rest of Smartscope. `main.webp` (hero and home card)
+  is a real capture; `zoom.jpg`, `themes.jpg` and `settings.jpg` are still synthetic renders.
+  A short screen recording could come later.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
