@@ -10,6 +10,7 @@
 <meta property="og:image" content="https://claeslanng.shop/assets/img/pitchscope/label.jpg">
 <meta property="og:url" content="https://claeslanng.shop/pitchscope/">
 <meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/pitchscope/">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
@@ -19,6 +20,37 @@
 .ps-hero-grid h1 { font-size: clamp(60px, 8.5vw, 116px); }
 @media (max-width: 820px) { .ps-hero-grid { grid-template-columns: 1fr; } }
 </style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "PitchScope",
+ "description": "A free note and key analyzer VST3, built for 808s, sub-bass and kicks.",
+ "url": "https://claeslanng.shop/pitchscope/",
+ "applicationCategory": "MultimediaApplication",
+ "applicationSubCategory": "Audio plugin (VST3)",
+ "operatingSystem": "Windows 10, Windows 11",
+ "softwareVersion": "0.9.0-beta",
+ "downloadUrl": "https://github.com/claeslanng/Pitchscope/releases",
+ "image": "https://claeslanng.shop/assets/img/pitchscope/label.jpg",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "EUR"
+ },
+ "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+ "author": {
+  "@type": "Person",
+  "name": "Claes Lanng",
+  "url": "https://claeslanng.com"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Claes Lanng Plugins",
+  "url": "https://claeslanng.shop/"
+ }
+}
+</script>
 </head>
 <body class="theme-pitchscope">
 
@@ -44,7 +76,7 @@
           <a class="btn btn-download" href="https://github.com/claeslanng/Pitchscope/releases">Download for Windows</a>
           <a class="btn btn-quiet" href="https://github.com/claeslanng/Pitchscope">Source code</a>
         </div>
-        <p class="fineprint">Version 0.9 beta. Free. VST3 for Windows, made for FL Studio.</p>
+        <p class="fineprint">Version 0.9 beta. Free. VST3 for Windows 10 and 11 (64-bit), made for FL Studio.</p>
       </div>
       <figure class="shot">
         <img src="../assets/img/pitchscope/label.jpg" width="840" height="600" alt="PitchScope reading an 808 as F sharp 1 in Bass mode, 46.3 Hz, 0 cents">
@@ -100,7 +132,7 @@
       <div class="panel panel-grid">
         <div>
           <h2 id="install-title">Install</h2>
-          <p>Takes about a minute.</p>
+          <p>Needs Windows 10 or 11 (64-bit) and a DAW that loads VST3 plugins, such as FL Studio. Takes about a minute.</p>
         </div>
         <ol class="steps">
           <li><span>Download <code>PitchScope-v0.9.0-beta-Windows-VST3.zip</code> and unzip it.</span></li>
@@ -123,6 +155,7 @@
       <a href="https://github.com/claeslanng/Pitchscope">Source code</a>
       <a href="https://github.com/claeslanng/Pitchscope/issues">Report a problem</a>
     </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
   </div>
 </footer>
 </body>
