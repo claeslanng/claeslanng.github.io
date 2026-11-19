@@ -35,10 +35,11 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 - **Fonts:** Archivo and Archivo Narrow (OFL, self-hosted woff2). No other webfonts.
 - **Copy:** plain and specific, sentence case. No all-caps eyebrow labels, no "→" on
   buttons, no numbered markers unless it's a real sequence (install steps are).
-- **Motion:** the home-page oscilloscope, and one small muted demo loop on the Smartscope
-  page (`drag-loop.mp4`, in the zoom section, with a short description beside it). Both
-  respect reduced motion (the loop shows controls instead of playing) and pause
-  off-screen. The owner asked for video loops to stay small and subtle, always with a
+- **Motion:** the home-page oscilloscope, and two muted demo loops on the Smartscope page:
+  `drag-loop.mp4` in the zoom section (with a short description beside it) and
+  `resize-loop.mp4` at the top of "Make it as big as you like" (with a caption; the owner
+  asked for it, 2026-11-19). All respect reduced motion (the loops show controls instead
+  of playing) and pause off-screen; one script handles every `.demo-video`. The owner asked for video loops to stay small and subtle, always with a
   line saying what they show. Use a muted looping MP4, not a GIF (a GIF of the same loop
   was 13 times bigger and limited to 256 colours).
 - **Screenshots** get a crisp 1 px outline (`--shot-shadow`), never a soft drop shadow:
@@ -86,7 +87,9 @@ That writes `main.webp`, `zoom.webp` (2280 × 784, lossless), `main-share.jpg` (
 its pixel size, 822 × 302, so it's sharp on high-density screens) and `drag-loop.mp4` +
 poster (1280 × 440, 5.7 s, Zoom x5 on two bars: the arrow rests on the next kick, the
 grabbing hand pulls it one beat into place, lets go, and later drags it back, so it loops
-without a seam; the pointer is drawn by RenderTest to match what the plugin shows).
+without a seam; the pointer is drawn by RenderTest to match what the plugin shows), and
+`resize-loop.mp4` + poster (1600 × 702, 13.8 s: dragged from 760 × 360 down to a strip,
+up to fill the frame, scope only on and off, back to 760 × 360).
 Captions name the layer colors for each theme (Graphite orange/light gray,
 Midnight cyan/white, Phosphor amber/green, Daylight deep blue/near-black). If the renders
 change what's shown, change the captions too. `fullscreen.webp` is still a hand capture.
@@ -119,7 +122,8 @@ then tick "Enforce HTTPS" in Settings → Pages.
 ## Open ideas
 
 - Smartscope's images are rendered from 1.2.0 (see Screenshots). Only `fullscreen.webp`
-  ("Make it as big as you like") is a hand capture from 1.1, without the corners button.
+  ("Make it as big as you like", under the resize loop) is a hand capture from 1.1,
+  without the corners button.
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
 - **Automatic screenshots on release (optional, not set up).** The rendering works (see

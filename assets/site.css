@@ -113,6 +113,7 @@ figure { margin: 0; }
 .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); }
 .gallery.wide { grid-template-columns: 1fr; }
 .shot-settings { margin-top: clamp(28px, 4vw, 48px); }
+.shot-after { margin-top: clamp(28px, 4vw, 48px); }
 .demo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 36px; align-items: center; margin-top: clamp(32px, 5vw, 56px); max-width: 980px; }
 .demo-video { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: var(--shot-shadow); background: #1E2023; }
 .demo h3 { font-size: 26px; line-height: 1.1; margin-bottom: 8px; }
