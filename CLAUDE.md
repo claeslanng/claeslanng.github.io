@@ -50,7 +50,12 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 
 ## Facts to keep accurate
 
-- **Smartscope:** version 1.1, download https://github.com/claeslanng/Smartscope/releases/latest
+- **Smartscope:** version 1.2, download https://github.com/claeslanng/Smartscope/releases/latest.
+  Resizes from 240 × 110 up to 7680 × 4320 and has a scope-only view (the owner wants
+  this promoted: second monitor, TV, tablet). Colors: picker, #RRGGBB hex box, and a dice
+  button for random sidechain colors.
+- **Spelling on the Smartscope page:** US English ("color", "colored", "gray"), matching
+  the plugin (the owner's call, 2026-11-19).
 - **PitchScope:** version 0.9 beta (a pre-release, so link to `/releases`, not `/releases/latest`), repo `claeslanng/Pitchscope`
 - **Flow FMX Host:** version 0.3, download https://github.com/claeslanng/flow-fmx-host/releases/latest
 - **Requirements:** Windows 10 or 11 (64-bit), a VST3 host. Flow FMX Host also needs WebView2.
@@ -92,7 +97,10 @@ then tick "Enforce HTTPS" in Settings → Pages.
 ## Open ideas
 
 - All Smartscope images are real captures (`main.webp`, `zoom.webp`, `theme-*.webp`,
-  `settings.webp`).
+  `settings.webp`, `fullscreen.webp` for "Make it as big as you like"). They were taken
+  with 1.1, so the header lacks 1.2's corners (scope only) button, and `settings.webp`
+  lacks the hex boxes and the dice button. Redo them with 1.2 (by hand or with the
+  RenderTest plan below).
 - The drag loop is cut from a Gyazo clip (1280 px, end card removed, a short blend at the
   seam). A new recording that starts and ends on the same view, made with the Windows
   Snipping Tool at full size, would loop perfectly.
