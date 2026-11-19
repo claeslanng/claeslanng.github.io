@@ -124,6 +124,7 @@ figure { margin: 0; }
 .steps li::before { content: counter(step); font: 700 34px/1 var(--narrow); color: var(--accent); }
 .steps li strong { color: var(--panel-text); }
 .panel + .panel { margin-top: 24px; }
+.panel + .shot { margin-top: clamp(28px, 4vw, 44px); }
 
 code {
   font: 600 0.92em/1.4 var(--sans);

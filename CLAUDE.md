@@ -72,8 +72,9 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- Real FL Studio screenshots or a short screen recording for Smartscope (the current
-  images are synthetic renders).
+- More real FL Studio screenshots, or a short screen recording, for Smartscope. One
+  real shot is on the page (`assets/img/smartscope/fl-studio.jpg`, under the sidechain
+  steps); the hero, zoom, themes and settings images are still synthetic renders.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
