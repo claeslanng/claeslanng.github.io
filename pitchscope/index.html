@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PitchScope: the note of your 808, bass or kick | Claes Lanng Plugins</title>
+<meta name="description" content="PitchScope is a free note and key analyzer VST3 for Windows, built for 808s, sub-bass and kicks. Reads notes down to 20 Hz.">
+<meta property="og:title" content="PitchScope by Claes Lanng Plugins">
+<meta property="og:description" content="A free note and key analyzer built for 808s, sub-bass and kicks.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/pitchscope/label.jpg">
+<meta property="og:url" content="https://claeslanng.shop/pitchscope/">
+<meta name="theme-color" content="#5E4630">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.ps-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.ps-hero-grid .shot { margin-top: 0; }
+.ps-hero-grid h1 { font-size: clamp(60px, 8.5vw, 116px); }
+@media (max-width: 820px) { .ps-hero-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="theme-pitchscope">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Plugins">
+      <a href="../smartscope/">Smartscope</a>
+      <a href="../pitchscope/" aria-current="page">PitchScope</a>
+      <a href="../flow-fmx-host/">Flow FMX Host</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="p-hero">
+    <div class="wrap ps-hero-grid">
+      <div>
+        <h1>PitchScope</h1>
+        <p class="purpose">Know the note of your 808, bass or kick, and the key of your loop.</p>
+        <div class="actions">
+          <a class="btn btn-download" href="https://github.com/claeslanng/Pitchscope/releases">Download for Windows</a>
+          <a class="btn btn-quiet" href="https://github.com/claeslanng/Pitchscope">Source code</a>
+        </div>
+        <p class="fineprint">Version 0.9 beta. Free. VST3 for Windows, made for FL Studio.</p>
+      </div>
+      <figure class="shot">
+        <img src="../assets/img/pitchscope/label.jpg" width="840" height="600" alt="PitchScope reading an 808 as F sharp 1 in Bass mode, 46.3 Hz, 0 cents">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-title">
+    <div class="wrap">
+      <h2 id="what-title">What it shows</h2>
+      <p class="intro">A small window with one big reading, made to be read at a glance from across the room.</p>
+      <dl class="features">
+        <div><dt>The note</dt><dd>Note name and octave, how many cents off it is (green when it's within 4 cents), the frequency in Hz and the level in dB.</dd></div>
+        <div><dt>The key</dt><dd>The key of your loop, its Camelot code and how sure it is, plus the relative key and the runner-up.</dd></div>
+        <div><dt>Built for the low end</dt><dd>Reads notes down to 20 Hz, and doesn't jump an octave on distorted 808s.</dd></div>
+        <div><dt>Notes that stay put</dt><dd>When a sound stops, the last note stays on screen, dimmed, so you can read it.</dd></div>
+        <div><dt>Light on your CPU</dt><dd>It never changes your audio, and it pauses the note analysis while its window is closed.</dd></div>
+        <div><dt>Four skins</dt><dd>Label, Graphite, Dark red, and Camelot, which takes the colour of the detected key.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="modes-title">
+    <div class="wrap">
+      <h2 id="modes-title">Five modes</h2>
+      <p class="intro">Tell PitchScope what you're feeding it, and it listens for the right thing. Bass is the default.</p>
+      <table class="plain">
+        <tr><th scope="row">Bass</th><td>808s, basslines and sub-bass, down to 20 Hz.</td></tr>
+        <tr><th scope="row">Drum</th><td>Kicks and toms: the note a kick settles on, or where a gliding kick lands.</td></tr>
+        <tr><th scope="row">Main</th><td>Anything.</td></tr>
+        <tr><th scope="row">Synth</th><td>Leads, plucks and vocals.</td></tr>
+        <tr><th scope="row">Chord</th><td>Pads and chords: shows the root of the chord.</td></tr>
+      </table>
+      <p class="fineprint">PitchScope names notes with middle C as C4. FL Studio's piano roll calls middle C "C5", so FL shows notes one octave higher.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="skins-title">
+    <div class="wrap">
+      <h2 id="skins-title">Pick a skin</h2>
+      <p class="intro">Choose one in the settings. It's saved with your project.</p>
+      <div class="gallery">
+        <figure class="shot"><img src="../assets/img/pitchscope/label-drum-kick.jpg" width="840" height="600" loading="lazy" alt="Label skin in Drum mode, holding F1 after a kick"><figcaption>Label, in Drum mode after a kick.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/pitchscope/graphite.jpg" width="840" height="600" loading="lazy" alt="Graphite skin reading A minor chords"><figcaption>Graphite.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/pitchscope/dark-red.jpg" width="840" height="600" loading="lazy" alt="Dark red skin reading an 808 as F sharp 1"><figcaption>Dark red.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/pitchscope/camelot-a-minor.jpg" width="840" height="600" loading="lazy" alt="Camelot skin tinted lavender for A minor"><figcaption>Camelot, tinted for A minor (8A).</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="panel panel-grid">
+        <div>
+          <h2 id="install-title">Install</h2>
+          <p>Takes about a minute.</p>
+        </div>
+        <ol class="steps">
+          <li><span>Download <code>PitchScope-v0.9.0-beta-Windows-VST3.zip</code> and unzip it.</span></li>
+          <li><span>Close FL Studio, then copy the <code>PitchScope.vst3</code> folder into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
+          <li><span>Start FL Studio, open <strong>Options</strong>, then <strong>Manage plugins</strong>, and click <strong>Find more plugins</strong>. Add PitchScope to a mixer track or a channel.</span></li>
+        </ol>
+      </div>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn btn-download" href="https://github.com/claeslanng/Pitchscope/releases">Download for Windows</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>PitchScope is free and open source under the GNU AGPLv3 licence. It passes your audio through unchanged. Made by Claes Lanng Plugins.</p>
+    <nav aria-label="Footer">
+      <a href="../">All plugins</a>
+      <a href="https://github.com/claeslanng/Pitchscope">Source code</a>
+      <a href="https://github.com/claeslanng/Pitchscope/issues">Report a problem</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

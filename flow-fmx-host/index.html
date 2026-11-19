@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow FMX Host: Google Flow Music plugins in FL Studio | Claes Lanng Plugins</title>
+<meta name="description" content="Flow FMX Host is a free VST3 for Windows that opens .fmx plugins made in Google Flow Music, so your Flow instruments and effects run in FL Studio.">
+<meta property="og:title" content="Flow FMX Host by Claes Lanng Plugins">
+<meta property="og:description" content="Run the plugins you build in Google Flow Music inside FL Studio on Windows.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/flow/instrument-start.jpg">
+<meta property="og:url" content="https://claeslanng.shop/flow-fmx-host/">
+<meta name="theme-color" content="#0D1113">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 48px); }
+.two h3 { font-size: 30px; line-height: 1; margin: 0 0 8px; }
+.two p { color: var(--text-2); margin: 0 0 18px; }
+.two .shot img { border-radius: 6px; }
+@media (max-width: 820px) { .two { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="theme-flow">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Plugins">
+      <a href="../smartscope/">Smartscope</a>
+      <a href="../pitchscope/">PitchScope</a>
+      <a href="../flow-fmx-host/" aria-current="page">Flow FMX Host</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Flow FMX Host</h1>
+      <p class="purpose">Run the plugins you build in Google Flow Music inside FL Studio on Windows.</p>
+      <div class="actions">
+        <a class="btn btn-download" href="https://github.com/claeslanng/flow-fmx-host/releases/latest">Download for Windows</a>
+        <a class="btn btn-quiet" href="https://github.com/claeslanng/flow-fmx-host">Source code</a>
+      </div>
+      <p class="fineprint">Version 0.3. Free. VST3 for Windows 10 and 11, tested in FL Studio.</p>
+      <figure class="shot">
+        <img src="../assets/img/flow/studio-sampler.png" width="875" height="725" alt="Studio Sampler, an instrument made in Google Flow Music, running in Flow FMX Instrument inside FL Studio">
+        <figcaption>Studio Sampler, an instrument made in Flow, running inside FL Studio. Example only: Flow FMX Host loads the <code>.fmx</code> files you make yourself.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap">
+      <h2 id="why-title">Your Flow plugins, on Windows</h2>
+      <p class="intro">Google Flow Music lets you build your own instruments and effects and export them as <code>.fmx</code> files, but its own plugin only runs on macOS. Flow FMX Host opens those files on Windows.</p>
+      <dl class="features">
+        <div><dt>Their own interface</dt><dd>Each <code>.fmx</code> shows the interface it was designed with, exactly as in Flow.</dd></div>
+        <div><dt>The original sound</dt><dd>It runs the plugin's own sound engine. Nothing is re-created or approximated.</dd></div>
+        <div><dt>Full automation</dt><dd>Every control shows up by name in your DAW, ready to automate.</dd></div>
+        <div><dt>Saved with your project</dt><dd>The <code>.fmx</code> is stored inside the project, so it still opens if the file moves.</dd></div>
+        <div><dt>Drag and drop</dt><dd>Drop audio samples onto the plugin, or drop an <code>.fmx</code> on the window to load it.</dd></div>
+        <div><dt>Resizable</dt><dd>The interface scales to any window size, and remembers it.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="two-title">
+    <div class="wrap">
+      <h2 id="two-title">Two plugins in one download</h2>
+      <p class="intro">One for instruments and one for effects.</p>
+      <div class="two">
+        <div>
+          <h3>Flow FMX Instrument</h3>
+          <p>For synths and samplers. Shows up in FL Studio as a generator in the Channel Rack.</p>
+          <figure class="shot"><img src="../assets/img/flow/instrument-start.jpg" width="1000" height="799" loading="lazy" alt="Flow FMX Instrument start screen"></figure>
+        </div>
+        <div>
+          <h3>Flow FMX Effect</h3>
+          <p>For effects. Shows up in FL Studio as an effect for a mixer slot.</p>
+          <figure class="shot"><img src="../assets/img/flow/effect.jpg" width="1000" height="799" loading="lazy" alt="Flow FMX Effect start screen"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ex-title">
+    <div class="wrap">
+      <h2 id="ex-title">Made in Flow, running in FL Studio</h2>
+      <p class="intro">Two more plugins by Claes Lanng Plugins, built in Google Flow Music. They're examples, and aren't part of the download.</p>
+      <div class="gallery">
+        <figure class="shot"><img src="../assets/img/flow/example-pitchscope.png" width="877" height="728" loading="lazy" alt="A tuner and key detector made in Flow, running in Flow FMX Effect"><figcaption>A tuner and key detector, in Flow FMX Effect.</figcaption></figure>
+        <figure class="shot"><img src="../assets/img/flow/monosafe.png" width="876" height="727" loading="lazy" alt="MonoSafe, a four-band stereo width tool made in Flow, running in Flow FMX Effect"><figcaption>MonoSafe, a four-band stereo width and mono-compatibility tool.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="panel panel-grid">
+        <div>
+          <h2 id="install-title">Install</h2>
+          <p>Needs Windows 10 or 11 (64-bit) and the Microsoft Edge WebView2 Runtime, which almost every Windows PC already has.</p>
+        </div>
+        <ol class="steps">
+          <li><span>Download <code>FlowFMX-Windows-x64.zip</code> and unzip it.</span></li>
+          <li><span>Copy both <code>.vst3</code> folders into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
+          <li><span>In FL Studio, open <strong>Options</strong>, then <strong>Manage plugins</strong>, and click <strong>Find more plugins</strong>.</span></li>
+          <li><span>Add <strong>Flow FMX Instrument</strong> to the Channel Rack, or <strong>Flow FMX Effect</strong> to a mixer slot.</span></li>
+          <li><span>Click <strong>Load Your Plugin</strong> and choose your <code>.fmx</code> file, or drag the file onto the window.</span></li>
+        </ol>
+      </div>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn btn-download" href="https://github.com/claeslanng/flow-fmx-host/releases/latest">Download for Windows</a>
+      </div>
+      <p class="fineprint">If the plugin window stays blank, install the <a href="https://developer.microsoft.com/microsoft-edge/webview2/">Evergreen WebView2 Runtime</a> from Microsoft.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Flow FMX Host is free and open source under the GNU AGPLv3 licence. It's an independent project, not affiliated with, endorsed by, or connected to Google. Google and Flow are trademarks of Google LLC. Made by Claes Lanng Plugins.</p>
+    <nav aria-label="Footer">
+      <a href="../">All plugins</a>
+      <a href="https://github.com/claeslanng/flow-fmx-host">Source code</a>
+      <a href="https://github.com/claeslanng/flow-fmx-host/issues">Report a problem</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

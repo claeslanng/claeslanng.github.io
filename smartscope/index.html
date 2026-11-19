@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smartscope: see if your kick and bass are in phase | Claes Lanng Plugins</title>
+<meta name="description" content="Smartscope is a free, tempo-synced oscilloscope VST3 for Windows. Show your kick and bass as coloured layers, zoom to single samples and check their phase.">
+<meta property="og:title" content="Smartscope by Claes Lanng Plugins">
+<meta property="og:description" content="A free, tempo-synced oscilloscope for checking that your kick and bass are in phase.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/smartscope/hero.jpg">
+<meta property="og:url" content="https://claeslanng.shop/smartscope/">
+<meta name="theme-color" content="#141517">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="theme-smartscope">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Plugins">
+      <a href="../smartscope/" aria-current="page">Smartscope</a>
+      <a href="../pitchscope/">PitchScope</a>
+      <a href="../flow-fmx-host/">Flow FMX Host</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="p-hero">
+    <div class="wrap">
+      <h1>Smartscope</h1>
+      <p class="purpose">See whether your kick and bass are in phase, locked to the tempo of your track.</p>
+      <div class="actions">
+        <a class="btn btn-download" href="https://github.com/claeslanng/Smartscope/releases/latest">Download for Windows</a>
+        <a class="btn btn-quiet" href="https://github.com/claeslanng/Smartscope">Source code</a>
+      </div>
+      <p class="fineprint">Version 1.1. Free. VST3 for Windows, made for FL Studio.</p>
+      <figure class="shot">
+        <img src="../assets/img/smartscope/hero.jpg" width="1000" height="460" alt="Smartscope showing one bar: a kick on sidechain 1 in orange over a bass in grey">
+        <figcaption>A kick on sidechain 1 (orange) drawn over the bass on the same track (grey), one bar long.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-title">
+    <div class="wrap">
+      <h2 id="what-title">What it does</h2>
+      <p class="intro">An oscilloscope that follows your project's tempo and song position, so the picture stands still while your loop plays.</p>
+      <dl class="features">
+        <div><dt>Tempo sync</dt><dd>The window always starts on the beat. Pick a length from 1/16 to 4 bars.</dd></div>
+        <div><dt>Sidechain layers</dt><dd>Send up to three other tracks into Smartscope and see each as its own coloured layer.</dd></div>
+        <div><dt>See the polarity</dt><dd>A linear scale shows which way each wave swings, so kick and bass fighting each other is easy to spot.</dd></div>
+        <div><dt>Zoom to single samples</dt><dd>Scroll in until you see every sample. The grid switches to milliseconds, and hovering shows the exact time and level.</dd></div>
+        <div><dt>Low-pass for the display</dt><dd>Hide everything but the low end. It never changes your audio, and it still works while playback is stopped.</dd></div>
+        <div><dt>Hold and compare</dt><dd>Keep a snapshot as a reference, nudge the bass, and see what changed.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="zoom-title">
+    <div class="wrap">
+      <h2 id="zoom-title">Zoom in on the hit</h2>
+      <p class="intro">Here the bass starts about 18 ms after the kick. Drag a sample by that much, and the two line up.</p>
+      <figure class="shot">
+        <img src="../assets/img/smartscope/zoom.jpg" width="1000" height="460" loading="lazy" alt="Smartscope zoomed in to the first milliseconds of a kick and bass">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sc-title">
+    <div class="wrap">
+      <div class="panel panel-grid">
+        <div>
+          <h2 id="sc-title">Show the kick on the bass track</h2>
+          <p>How to set up a sidechain layer in FL Studio.</p>
+        </div>
+        <ol class="steps">
+          <li><span>Put Smartscope on the mixer track you want to look at, for example the bass.</span></li>
+          <li><span>Select the kick's mixer track. Right-click the small arrow under Smartscope's track and choose <strong>Sidechain to this track</strong>.</span></li>
+          <li><span>In Smartscope's window, click FL's gear icon, open <strong>Processing</strong>, and set <strong>Sidechain 1</strong> to the kick's track number.</span></li>
+          <li><span>The <strong>SC 1</strong> button in Smartscope lights up and the kick appears. Repeat for sidechains 2 and 3.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="look-title">
+    <div class="wrap">
+      <h2 id="look-title">Your colours</h2>
+      <p class="intro">Four themes, and a colour and opacity for every layer. Your choices are saved with the project.</p>
+      <div class="gallery wide">
+        <figure class="shot">
+          <img src="../assets/img/smartscope/themes.jpg" width="1200" height="558" loading="lazy" alt="Smartscope in the Graphite, Midnight, Phosphor and Daylight themes">
+          <figcaption>Graphite, Midnight, Phosphor and Daylight.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="../assets/img/smartscope/settings.jpg" width="900" height="420" loading="lazy" alt="Smartscope settings: theme, layer colours and opacity, display options">
+          <figcaption>Settings: theme, layer colours, and display options.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="panel panel-grid">
+        <div>
+          <h2 id="install-title">Install</h2>
+          <p>Takes about a minute.</p>
+        </div>
+        <ol class="steps">
+          <li><span>Download <code>Smartscope-v1.1.0-Windows-VST3.zip</code> and unzip it.</span></li>
+          <li><span>Copy the <code>Smartscope.vst3</code> folder into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
+          <li><span>In FL Studio, open <strong>Options</strong>, then <strong>Manage plugins</strong>, and click <strong>Find more plugins</strong>. Add Smartscope to a mixer track.</span></li>
+        </ol>
+      </div>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn btn-download" href="https://github.com/claeslanng/Smartscope/releases/latest">Download for Windows</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Smartscope is free and open source under the GNU AGPLv3 licence. It passes your audio through unchanged. Made by Claes Lanng Plugins.</p>
+    <nav aria-label="Footer">
+      <a href="../">All plugins</a>
+      <a href="https://github.com/claeslanng/Smartscope">Source code</a>
+      <a href="https://github.com/claeslanng/Smartscope/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/claeslanng/Smartscope/issues">Report a problem</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
