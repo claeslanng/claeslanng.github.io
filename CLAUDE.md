@@ -98,6 +98,15 @@ then tick "Enforce HTTPS" in Settings → Pages.
   Snipping Tool at full size, would loop perfectly.
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
+- **Planned after Smartscope 1.2.0: automatic screenshots.** Smartscope's
+  `Tests/RenderTest.cpp` already renders the real UI to PNG with a fake host. The plan is
+  to feed it the owner's real audio (branch `screenshot-audio` in `claeslanng/smartscope`,
+  `Tests/audio/`: kick for sidechain 1, ducked bass for the main input, 4 bars at 128 BPM),
+  render at 2x the main shot, zoom, the four themes (with different layer colours per
+  theme: Graphite orange/grey, Midnight cyan/white, Phosphor amber/green, Daylight deep
+  blue or red/near-black), settings, and frames for a perfectly looping drag video, then
+  possibly a GitHub Action that updates this site on each release. Wait for the owner to
+  say 1.2.0 is merged before touching Smartscope's `main`.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
