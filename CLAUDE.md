@@ -44,6 +44,10 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
   was 13 times bigger and limited to 256 colours).
 - **Screenshots** get a crisp 1 px outline (`--shot-shadow`), never a soft drop shadow:
   the owner found the blurred shadows looked low quality (banding on the dark pages).
+- **Smartscope's name in its two big headings** (the page's `<h1>` and the home-page
+  card title) is written like the plugin's logo: "Smart" in the page's text color,
+  "scope" in orange (`<span class="logo-accent">`). Only there: the nav, buttons and body
+  text keep the plain name.
 - **Footers** credit "Claes Lanng Plugins is made by Claes Lanng" (linking to
   https://claeslanng.com), the contact email djclaeslanng@gmail.com, and Patreon
   (https://www.patreon.com/claeslanng).
