@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claes Lanng Plugins: free plugins for the low end</title>
+<meta name="description" content="Free, open-source VST3 plugins for Windows, made for kicks, 808s and bass: Smartscope, PitchScope and Flow FMX Host.">
+<meta property="og:title" content="Claes Lanng Plugins">
+<meta property="og:description" content="Free, open-source VST3 plugins for kicks, 808s and bass.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/smartscope.jpg">
+<meta property="og:url" content="https://claeslanng.shop/">
+<meta name="theme-color" content="#5E4630">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Archivo Narrow"; src: url("assets/fonts/ArchivoNarrow_700Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("assets/fonts/Archivo_400Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("assets/fonts/Archivo_600SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("assets/fonts/Archivo_800ExtraBold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+
+:root {
+  /* The same palette as PitchScope: a kraft box with a white label on it */
+  --box: #5E4630;
+  --box-deep: #46331F;
+  --box-raised: #6A5038;
+  --box-text: #F2EEE6;
+  --box-text-2: #D2B994;
+  --label: #F2EEE6;
+  --field: #FBFAF7;
+  --ink: #1A1511;
+  --ink-2: #665D53;
+  --ink-faint: #D3CCC0;
+  --orange: #F25A22;
+
+  --narrow: "Archivo Narrow", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --edge: clamp(20px, 4vw, 48px);
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--box);
+  color: var(--box-text);
+  font: 400 17px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--edge); }
+
+/* ---------- Header ---------- */
+.site-header { padding: 22px 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.wordmark {
+  font: 700 24px/1 var(--narrow);
+  color: var(--box-text);
+  text-decoration: none;
+  letter-spacing: 0.005em;
+}
+.wordmark span { color: var(--box-text-2); }
+.site-nav { display: flex; gap: 22px; }
+.site-nav a {
+  color: var(--box-text-2);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--box-text); }
+
+/* ---------- Hero: the white size label on the box ---------- */
+.hero { padding: 18px 0 72px; }
+.label {
+  background: var(--label);
+  color: var(--ink);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(26, 21, 17, 0.35), 0 18px 40px -18px rgba(26, 21, 17, 0.55);
+}
+.hero .label { padding: clamp(28px, 5vw, 56px) clamp(22px, 5vw, 56px) clamp(22px, 4vw, 40px); }
+.hero h1 {
+  font: 700 clamp(54px, 10vw, 128px)/0.9 var(--narrow);
+  letter-spacing: -0.01em;
+  margin: 0 0 22px;
+  max-width: 9.5em;
+}
+.hero .lede {
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 34em;
+  margin: 0 0 34px;
+}
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+
+.scope { margin: 0; border-top: 2px solid var(--ink); padding-top: 10px; }
+.scope-ruler {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font: 700 15px/1 var(--narrow);
+  color: var(--ink-2);
+  margin-bottom: 6px;
+}
+.scope-ruler span { border-left: 1px solid var(--ink-faint); padding-left: 6px; }
+.scope canvas { display: block; width: 100%; height: clamp(120px, 18vw, 200px); }
+.scope figcaption { font-size: 14px; color: var(--ink-2); margin-top: 10px; }
+.swatch { display: inline-block; width: 18px; height: 3px; vertical-align: middle; margin: 0 4px 2px 0; border-radius: 2px; }
+
+/* ---------- Plugins ---------- */
+.plugins { padding: 8px 0 40px; }
+.section-title {
+  font: 700 clamp(34px, 5vw, 56px)/1 var(--narrow);
+  margin: 0 0 8px;
+}
+.section-intro { color: var(--box-text-2); margin: 0 0 48px; max-width: 36em; }
+
+.plugin {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding: 56px 0;
+  border-top: 1px solid rgba(242, 238, 230, 0.18);
+}
+.plugin.flip .plugin-shot { order: 2; }
+.plugin-shot img { border-radius: 3px; box-shadow: 0 18px 40px -16px rgba(26, 21, 17, 0.7); }
+.plugin-shot.transparent img { box-shadow: none; filter: drop-shadow(0 18px 28px rgba(26, 21, 17, 0.55)); }
+
+.plugin h3 {
+  font: 700 clamp(44px, 6vw, 72px)/0.95 var(--narrow);
+  margin: 0 0 6px;
+}
+.plugin .version { color: var(--box-text-2); font-size: 15px; margin: 0 0 18px; }
+.plugin .purpose { font-size: 21px; line-height: 1.4; margin: 0 0 18px; font-weight: 600; }
+.plugin ul { margin: 0 0 28px; padding-left: 1.1em; color: var(--box-text); }
+.plugin li { margin: 0 0 6px; }
+.plugin li::marker { color: var(--orange); }
+.plugin .small { font-size: 13px; color: var(--box-text-2); margin: 18px 0 0; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 2px;
+  font: 800 16px/1 var(--sans);
+  text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.btn-download { background: var(--orange); color: var(--ink); }
+.btn-download:hover { background: #FF6E39; }
+.btn-source { border: 1.5px solid var(--box-text-2); color: var(--box-text); }
+.btn-source:hover { border-color: var(--box-text); background: var(--box-raised); }
+
+/* ---------- Install ---------- */
+.install { padding: 24px 0 72px; }
+.install .label { padding: clamp(26px, 4vw, 44px) clamp(22px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; }
+.install h2 { font: 700 clamp(34px, 5vw, 52px)/1 var(--narrow); margin: 0 0 10px; }
+.install .label > div > p { color: var(--ink-2); margin: 0; }
+.install ol { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+.install li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 4px 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--ink-faint);
+}
+.install li:first-child { border-top: 0; padding-top: 4px; }
+.install li::before {
+  content: counter(step);
+  font: 700 34px/1 var(--narrow);
+  color: var(--orange);
+}
+code {
+  font: 600 0.92em/1.4 var(--sans);
+  background: var(--field);
+  border: 1px solid var(--ink-faint);
+  border-radius: 2px;
+  padding: 1px 6px;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+.plugin code { background: var(--box-deep); border-color: var(--box-raised); color: var(--box-text); }
+
+/* ---------- Free and open ---------- */
+.open { padding: 0 0 80px; }
+.open .wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; align-items: start; }
+.open h2 { font: 700 clamp(34px, 5vw, 52px)/1 var(--narrow); margin: 0; }
+.open p { margin: 0 0 14px; max-width: 38em; color: var(--box-text); }
+.open p.muted { color: var(--box-text-2); }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--box-deep); padding: 34px 0; color: var(--box-text-2); font-size: 14px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+.site-footer a { color: var(--box-text); text-decoration-color: var(--box-text-2); }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 820px) {
+  .plugin, .install .label, .open .wrap { grid-template-columns: 1fr; }
+  .plugin.flip .plugin-shot { order: 0; }
+  .plugin { padding: 44px 0; }
+  .site-nav { gap: 16px; }
+  .site-nav a.hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#top" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#plugins">Plugins</a>
+      <a href="#install" class="hide-sm">Install</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="label">
+        <h1>Free plugins for the low end.</h1>
+        <p class="lede">Small, focused tools for <strong>kicks, 808s and bass</strong>, made in and for FL Studio. VST3 for Windows. Free to download, and the code is open.</p>
+
+        <figure class="scope" aria-label="An oscilloscope showing one bar of a kick and a bass">
+          <div class="scope-ruler" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+          <canvas id="scope"></canvas>
+          <figcaption><span class="swatch" style="background:var(--ink)"></span>Kick <span class="swatch" style="background:var(--orange);margin-left:14px"></span>Bass, in step with the beat, the way Smartscope shows them.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="plugins" id="plugins" aria-labelledby="plugins-title">
+    <div class="wrap">
+      <h2 class="section-title" id="plugins-title">The plugins</h2>
+      <p class="section-intro">Each one does one job. All three are free and run in any DAW that loads VST3 plugins on Windows.</p>
+
+      <article class="plugin" id="smartscope">
+        <div class="plugin-shot">
+          <img src="assets/img/smartscope.jpg" width="1000" height="460" loading="lazy" alt="Smartscope showing a kick in orange over a bass in grey, synced to one bar">
+        </div>
+        <div>
+          <h3>Smartscope</h3>
+          <p class="version">Version 1.1</p>
+          <p class="purpose">See whether your kick and bass are in phase.</p>
+          <ul>
+            <li>Oscilloscope locked to your project tempo, from 1/16 to 4 bars</li>
+            <li>Up to three sidechain layers, each in its own colour</li>
+            <li>Zoom in to single samples, with a low-pass that shows just the low end</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-download" href="https://github.com/claeslanng/Smartscope/releases/latest">Download for Windows</a>
+            <a class="btn btn-source" href="https://github.com/claeslanng/Smartscope">Source code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="plugin flip" id="pitchscope">
+        <div class="plugin-shot">
+          <img src="assets/img/pitchscope.jpg" width="840" height="600" loading="lazy" alt="PitchScope reading an 808 as F sharp 1 in Bass mode">
+        </div>
+        <div>
+          <h3>PitchScope</h3>
+          <p class="version">Version 0.9 beta</p>
+          <p class="purpose">Know the note of your 808, bass or kick, and the key of your loop.</p>
+          <ul>
+            <li>Big, readable note with cents, Hz and level</li>
+            <li>Built for the low end: reads notes down to 20 Hz</li>
+            <li>Five modes (Bass, Drum, Main, Synth, Chord) and four skins</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-download" href="https://github.com/claeslanng/PitchScope/releases">Download for Windows</a>
+            <a class="btn btn-source" href="https://github.com/claeslanng/PitchScope">Source code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="plugin" id="flow-fmx-host">
+        <div class="plugin-shot transparent">
+          <img src="assets/img/flow-fmx-host.png" width="875" height="725" loading="lazy" alt="A sampler made in Google Flow Music, running inside Flow FMX Host in FL Studio">
+        </div>
+        <div>
+          <h3>Flow FMX Host</h3>
+          <p class="version">Version 0.3</p>
+          <p class="purpose">Run the plugins you build in Google Flow Music inside FL Studio on Windows.</p>
+          <ul>
+            <li>Opens Flow's exported <code>.fmx</code> files, with their own interface</li>
+            <li>Two plugins: one for instruments, one for effects</li>
+            <li>Every control can be automated, and is saved with your project</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-download" href="https://github.com/claeslanng/flow-fmx-host/releases/latest">Download for Windows</a>
+            <a class="btn btn-source" href="https://github.com/claeslanng/flow-fmx-host">Source code</a>
+          </div>
+          <p class="small">An independent project, not affiliated with or endorsed by Google. Google and Flow are trademarks of Google LLC.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="install" id="install" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="label">
+        <div>
+          <h2 id="install-title">Installing</h2>
+          <p>The same three steps for every plugin.</p>
+        </div>
+        <ol>
+          <li><span>Download the <code>.zip</code> from the plugin's download page and unzip it.</span></li>
+          <li><span>Copy the <code>.vst3</code> folder into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
+          <li><span>In FL Studio, open Options, then Manage plugins, and click Find more plugins. Other DAWs have a similar rescan button.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="open" aria-labelledby="open-title">
+    <div class="wrap">
+      <h2 id="open-title">Free, and open</h2>
+      <div>
+        <p>Everything here is free, with no accounts, licence keys or trial limits. The source code of every plugin is on GitHub under the GNU AGPLv3 licence, so you can read it, build it yourself, or change it.</p>
+        <p class="muted">Found a bug, or have an idea? Open an issue on the plugin's GitHub page.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Claes Lanng Plugins</span>
+    <span><a href="https://github.com/claeslanng">github.com/claeslanng</a></span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const canvas = document.getElementById("scope");
+  const ctx = canvas.getContext("2d");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // One bar of 4/4 at 128 BPM: a kick on every beat, and a bass that ducks under it
+  const bpm = 128, beats = 4, rate = 6000;
+  const beatSec = 60 / bpm, barSec = beatSec * beats;
+  const n = Math.round(barSec * rate);
+  const kick = new Float32Array(n), bass = new Float32Array(n);
+  let kickPhase = 0, bassPhase = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / rate, tb = t % beatSec;
+    if (tb < 1 / rate) kickPhase = 0;
+    const f = 48 + 130 * Math.exp(-tb * 32);
+    kickPhase += 2 * Math.PI * f / rate;
+    kick[i] = 0.92 * Math.sin(kickPhase) * Math.exp(-tb * 6.5);
+    bassPhase += 2 * Math.PI * 49 / rate;
+    let saw = 0;
+    for (let h = 1; h <= 4; h++) saw += Math.sin(bassPhase * h) / h;
+    const duck = 1 - Math.exp(-Math.max(0, tb - 0.02) * 9);
+    bass[i] = 0.42 * saw * duck;
+  }
+
+  let cols = 0, kHi, kLo, bHi, bLo, w = 0, h = 0, dpr = 1;
+  function measure() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const r = canvas.getBoundingClientRect();
+    w = r.width; h = r.height;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    cols = Math.max(1, Math.round(w));
+    kHi = new Float32Array(cols); kLo = new Float32Array(cols);
+    bHi = new Float32Array(cols); bLo = new Float32Array(cols);
+    for (let c = 0; c < cols; c++) {
+      const s0 = Math.floor(c * n / cols), s1 = Math.min(n - 1, Math.floor((c + 1) * n / cols));
+      let a = -9, b = 9, x = -9, y = 9;
+      for (let s = s0; s <= s1; s++) {
+        a = Math.max(a, kick[s]); b = Math.min(b, kick[s]);
+        x = Math.max(x, bass[s]); y = Math.min(y, bass[s]);
+      }
+      kHi[c] = a; kLo[c] = b; bHi[c] = x; bLo[c] = y;
+    }
+  }
+
+  const css = getComputedStyle(document.documentElement);
+  const ink = css.getPropertyValue("--ink").trim();
+  const orange = css.getPropertyValue("--orange").trim();
+  const faint = css.getPropertyValue("--ink-faint").trim();
+
+  // Filled min/max envelope, drawn for columns [from, to)
+  function envelope(hi, lo, from, to, colour, alpha) {
+    if (to - from < 2) return;
+    const mid = h / 2, amp = h * 0.46;
+    ctx.globalAlpha = alpha;
+    ctx.beginPath();
+    ctx.moveTo(from + 0.5, mid - hi[from] * amp);
+    for (let c = from + 1; c < to; c++) ctx.lineTo(c + 0.5, mid - hi[c] * amp);
+    for (let c = to - 1; c >= from; c--) ctx.lineTo(c + 0.5, mid - lo[c] * amp);
+    ctx.closePath();
+    ctx.fillStyle = colour; ctx.fill();
+    ctx.lineWidth = 1.2; ctx.strokeStyle = colour; ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+
+  function draw(progress) {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = faint;
+    for (let b = 1; b < beats; b++) ctx.fillRect(Math.round(b * w / beats), 0, 1, h);
+    ctx.fillRect(0, Math.round(h / 2), w, 1);
+
+    const head = Math.round(progress * cols);
+    // The part not yet redrawn this pass stays as a faint copy of the last one
+    envelope(bHi, bLo, Math.max(0, head - 1), cols, orange, 0.22);
+    envelope(kHi, kLo, Math.max(0, head - 1), cols, ink, 0.22);
+    envelope(bHi, bLo, 0, Math.min(cols, head + 1), orange, 1);
+    envelope(kHi, kLo, 0, Math.min(cols, head + 1), ink, 1);
+
+    if (progress < 1) {
+      ctx.fillStyle = orange;
+      ctx.fillRect(head, 0, 2, h);
+    }
+  }
+
+  let raf = 0, start = 0, visible = true;
+  function frame(now) {
+    if (!start) start = now;
+    draw(((now - start) / 1000 % barSec) / barSec);
+    raf = requestAnimationFrame(frame);
+  }
+  function update() {
+    cancelAnimationFrame(raf);
+    if (reduceMotion.matches || !visible) { draw(1); return; }
+    start = 0;
+    raf = requestAnimationFrame(frame);
+  }
+
+  measure(); update();
+  window.addEventListener("resize", () => { measure(); update(); });
+  reduceMotion.addEventListener?.("change", update);
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }).observe(canvas);
+})();
+</script>
+</body>
+</html>
