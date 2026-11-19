@@ -120,8 +120,10 @@ pushing, and send the user the relevant ones.
 
 GoDaddy DNS (nameservers ns53/ns54.domaincontrol.com): four A records for `@` pointing to
 185.199.108–111.153, and `www` as a CNAME to `claeslanng.github.io`. The DNS was switched
-over on 2026-11-19. If HTTPS isn't enforced yet, the owner has to click "Check again" and
-then tick "Enforce HTTPS" in Settings → Pages.
+over on 2026-11-19, and the owner turned on "Enforce HTTPS" in Settings → Pages the same
+day. Both claeslanng.shop and www resolve correctly and the site loads over HTTPS. The
+`CNAME` file must keep `claeslanng.shop`: changing the custom domain in GitHub's Pages
+settings rewrites or deletes that file.
 
 ## Open ideas
 
