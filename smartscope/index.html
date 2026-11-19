@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smartscope: see if your kick and bass are in phase | Claes Lanng Plugins</title>
-<meta name="description" content="Smartscope is a free, tempo-synced oscilloscope VST3 for Windows. Show your kick and bass as coloured layers, zoom to single samples and check their phase.">
+<meta name="description" content="Smartscope is a free, tempo-synced oscilloscope VST3 for Windows. Show your kick and bass as colored layers, zoom to single samples and check their phase.">
 <meta property="og:title" content="Smartscope by Claes Lanng Plugins">
 <meta property="og:description" content="A free, tempo-synced oscilloscope for checking that your kick and bass are in phase.">
 <meta property="og:image" content="https://claeslanng.shop/assets/img/smartscope/main-share.jpg">
@@ -24,7 +24,7 @@
  "applicationCategory": "MultimediaApplication",
  "applicationSubCategory": "Audio plugin (VST3)",
  "operatingSystem": "Windows 10, Windows 11",
- "softwareVersion": "1.1.0",
+ "softwareVersion": "1.2.0",
  "downloadUrl": "https://github.com/claeslanng/Smartscope/releases/latest",
  "image": "https://claeslanng.shop/assets/img/smartscope/main-share.jpg",
  "offers": {
@@ -69,10 +69,10 @@
         <a class="btn btn-download" href="https://github.com/claeslanng/Smartscope/releases/latest">Download for Windows</a>
         <a class="btn btn-quiet" href="https://github.com/claeslanng/Smartscope">Source code</a>
       </div>
-      <p class="fineprint">Version 1.1. Free. VST3 for Windows 10 and 11 (64-bit), made for FL Studio.</p>
+      <p class="fineprint">Version 1.2. Free. VST3 for Windows 10 and 11 (64-bit), made for FL Studio.</p>
       <figure class="shot">
-        <img src="../assets/img/smartscope/main.webp" width="2279" height="783" alt="Smartscope in FL Studio showing half a bar: a kick on sidechain 1 in orange, and the bass on the same track in grey coming in as the kick dies away">
-        <figcaption>A kick on sidechain 1 (orange) over the bass on the same track (grey), half a bar long.</figcaption>
+        <img src="../assets/img/smartscope/main.webp" width="2279" height="783" alt="Smartscope in FL Studio showing half a bar: a kick on sidechain 1 in orange, and the bass on the same track in gray coming in as the kick dies away">
+        <figcaption>A kick on sidechain 1 (orange) over the bass on the same track (gray), half a bar long.</figcaption>
       </figure>
     </div>
   </section>
@@ -83,11 +83,13 @@
       <p class="intro">An oscilloscope that follows your project's tempo and song position, so the picture stands still while your loop plays.</p>
       <dl class="features">
         <div><dt>Tempo sync</dt><dd>The window always starts on the beat. Pick a length from 1/16 to 4 bars.</dd></div>
-        <div><dt>Sidechain layers</dt><dd>Send up to three other tracks into Smartscope and see each as its own coloured layer.</dd></div>
+        <div><dt>Sidechain layers</dt><dd>Send up to three other tracks into Smartscope and see each as its own colored layer.</dd></div>
         <div><dt>See the polarity</dt><dd>A linear scale shows which way each wave swings, so kick and bass fighting each other is easy to spot.</dd></div>
         <div><dt>Zoom to single samples</dt><dd>Scroll in until you see every sample. The grid switches to milliseconds, and hovering shows the exact time and level.</dd></div>
         <div><dt>Low-pass for the display</dt><dd>Hide everything but the low end. It never changes your audio, and it still works while playback is stopped.</dd></div>
         <div><dt>Hold and compare</dt><dd>Keep a snapshot as a reference, nudge the bass, and see what changed.</dd></div>
+        <div><dt>Any size</dt><dd>From a small strip to a whole second monitor, up to 7680&nbsp;×&nbsp;4320. The controls make room as the window shrinks.</dd></div>
+        <div><dt>Scope only</dt><dd>One click hides the header and controls, so only the waveform is left.</dd></div>
       </dl>
     </div>
   </section>
@@ -110,6 +112,17 @@
     </div>
   </section>
 
+  <section class="section" aria-labelledby="size-title">
+    <div class="wrap">
+      <h2 id="size-title">Make it as big as you like</h2>
+      <p class="intro">Drag the corner anywhere from a 240&nbsp;×&nbsp;110 strip up to 7680&nbsp;×&nbsp;4320. Detach the window in FL Studio and give it a whole second monitor, a TV or a tablet, or tuck it into a corner. The grid and dB labels get finer as it grows, and the controls make room as it shrinks. One click on the corners button hides everything but the waveform. The size is saved with your project.</p>
+      <figure class="shot">
+        <img src="../assets/img/smartscope/fullscreen.webp" width="1903" height="912" loading="lazy" alt="Smartscope filling a second monitor in FL Studio, showing the kick in blue over the bass in gray">
+        <figcaption>Filling a second monitor: the kick on sidechain 2 (blue) over the bass (gray).</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section" aria-labelledby="sc-title">
     <div class="wrap">
       <div class="panel panel-grid">
@@ -129,8 +142,8 @@
 
   <section class="section" aria-labelledby="look-title">
     <div class="wrap">
-      <h2 id="look-title">Your colours</h2>
-      <p class="intro">Four themes, and a colour and opacity for every layer. Your choices are saved with the project.</p>
+      <h2 id="look-title">Your colors</h2>
+      <p class="intro">Four themes, and a color and opacity for every layer. Pick a color, type a hex code like #556BAA, or roll the dice for new sidechain colors that stay easy to see. Your choices are saved with the project.</p>
       <div class="gallery">
         <figure class="shot">
           <img src="../assets/img/smartscope/theme-graphite.webp" width="1140" height="392" loading="lazy" alt="Smartscope in the Graphite theme">
@@ -150,8 +163,8 @@
         </figure>
       </div>
       <figure class="shot shot-settings">
-        <img src="../assets/img/smartscope/settings.webp" width="900" height="370" loading="lazy" alt="Smartscope settings: a colour, opacity and show toggle for each layer, the theme, and display options">
-        <figcaption>Settings: a colour and opacity for each layer, the theme, and display options.</figcaption>
+        <img src="../assets/img/smartscope/settings.webp" width="900" height="370" loading="lazy" alt="Smartscope settings: a color, opacity and show toggle for each layer, the theme, and display options">
+        <figcaption>Settings: a color and opacity for each layer, the theme, and display options.</figcaption>
       </figure>
     </div>
   </section>
@@ -164,7 +177,7 @@
           <p>Needs Windows 10 or 11 (64-bit) and a DAW that loads VST3 plugins, such as FL Studio. Takes about a minute.</p>
         </div>
         <ol class="steps">
-          <li><span>Download <code>Smartscope-v1.1.0-Windows-VST3.zip</code> and unzip it.</span></li>
+          <li><span>Download <code>Smartscope-v1.2.0-Windows-VST3.zip</code> and unzip it.</span></li>
           <li><span>Copy the <code>Smartscope.vst3</code> folder into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
           <li><span>In FL Studio, open <strong>Options</strong>, then <strong>Manage plugins</strong>, and click <strong>Find more plugins</strong>. Add Smartscope to a mixer track.</span></li>
         </ol>
