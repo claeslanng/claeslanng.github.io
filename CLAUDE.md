@@ -41,6 +41,8 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
   off-screen. The owner asked for video loops to stay small and subtle, always with a
   line saying what they show. Use a muted looping MP4, not a GIF (a GIF of the same loop
   was 13 times bigger and limited to 256 colours).
+- **Screenshots** get a crisp 1 px outline (`--shot-shadow`), never a soft drop shadow:
+  the owner found the blurred shadows looked low quality (banding on the dark pages).
 - **Footers** credit "Claes Lanng Plugins is made by Claes Lanng" (linking to
   https://claeslanng.com), the contact email djclaeslanng@gmail.com, and Patreon
   (https://www.patreon.com/claeslanng).

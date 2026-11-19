@@ -29,14 +29,14 @@
   --text: var(--paper); --text-2: #D2B994; --rule: rgba(242, 238, 230, 0.18);
   --accent: var(--safety); --accent-hover: #FF6E39; --on-accent: var(--ink);
   --panel: var(--paper); --panel-text: var(--ink); --panel-text-2: var(--ink-2); --panel-rule: var(--ink-faint);
-  --shot-shadow: 0 18px 40px -16px rgba(26, 21, 17, 0.7);
+  --shot-shadow: 0 0 0 1px rgba(26, 21, 17, 0.35);
 }
 .theme-smartscope {
   --bg: #141517; --bg-deep: #0E0F10; --raised: #24262A;
   --text: #E4E5E7; --text-2: #9499A0; --rule: #2C2F33;
   --accent: #F08A24; --accent-hover: #FF9D3D; --on-accent: #141517;
   --panel: #1D1F22; --panel-text: #E4E5E7; --panel-text-2: #9499A0; --panel-rule: #2C2F33;
-  --shot-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.9);
+  --shot-shadow: 0 0 0 1px #2C2F33;
 }
 .theme-flow {
   --bg: #0D1113; --bg-deep: #080B0C; --raised: #1A2226;
@@ -114,7 +114,7 @@ figure { margin: 0; }
 .gallery.wide { grid-template-columns: 1fr; }
 .shot-settings { margin-top: clamp(28px, 4vw, 48px); }
 .demo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 36px; align-items: center; margin-top: clamp(32px, 5vw, 56px); max-width: 980px; }
-.demo-video { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: 0 0 0 1px var(--rule); background: #1E2023; }
+.demo-video { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: var(--shot-shadow); background: #1E2023; }
 .demo h3 { font-size: 26px; line-height: 1.1; margin-bottom: 8px; }
 .demo p { color: var(--text-2); margin: 0; font-size: 16px; }
 
