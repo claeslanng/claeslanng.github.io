@@ -64,7 +64,10 @@ PNG and attached in the chat (Gyazo links can't be downloaded from the workspace
 FL Studio's wrapper bar and border (about 74 px at the top and 5–6 px at the sides and
 bottom). Save as lossless WebP at full size; the `width`/`height` attributes are the
 pixel size. Social previews (`og:image`, JSON-LD) use a 1200 px JPEG, since some sites
-don't read WebP.
+don't read WebP. The settings dialog doesn't grow with the plugin window, so
+`settings.webp` is a 900 px crop around the dialog, shown at its natural size; a capture at
+Windows 200% scaling would make it sharper on high-density screens. Theme shots are scaled
+to 1140 px wide for the two-column grid.
 
 ## Checking changes
 
@@ -82,9 +85,12 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- Real FL Studio screenshots for the rest of Smartscope. `main.webp` (hero and home card)
-  is a real capture; `zoom.jpg`, `themes.jpg` and `settings.jpg` are still synthetic renders.
-  A short screen recording could come later.
+- A real zoomed-in Smartscope capture to replace `zoom.jpg`, the last synthetic render.
+  When it arrives, check the "about 18 ms" sentence above it against what the capture
+  shows. All other Smartscope images (`main.webp`, `theme-*.webp`, `settings.webp`) are
+  real captures. A short screen recording could come later.
+- The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
+  the version facts and ask whether the screenshots need redoing.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
