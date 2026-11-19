@@ -84,8 +84,10 @@ python3 Tests/make_site_images.py /tmp/renders --readme docs/images \
 That writes `main.webp`, `zoom.webp` (2280 × 784, lossless), `main-share.jpg` (1200 px),
 `theme-*.webp` (1140 px), `settings.webp` (2x: its `width`/`height` attributes are half
 its pixel size, 822 × 302, so it's sharp on high-density screens) and `drag-loop.mp4` +
-poster (1280 × 440, 6.4 s, slides one beat to the next kick and back, so it loops without
-a seam). Captions name the layer colors for each theme (Graphite orange/light gray,
+poster (1280 × 440, 5.7 s, Zoom x5 on two bars: the arrow rests on the next kick, the
+grabbing hand pulls it one beat into place, lets go, and later drags it back, so it loops
+without a seam; the pointer is drawn by RenderTest to match what the plugin shows).
+Captions name the layer colors for each theme (Graphite orange/light gray,
 Midnight cyan/white, Phosphor amber/green, Daylight deep blue/near-black). If the renders
 change what's shown, change the captions too. `fullscreen.webp` is still a hand capture.
 
