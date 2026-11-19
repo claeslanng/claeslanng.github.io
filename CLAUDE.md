@@ -45,7 +45,7 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 ## Facts to keep accurate
 
 - **Smartscope:** version 1.1, download https://github.com/claeslanng/Smartscope/releases/latest.
-  Resizes up to 3000 × 1600 (the owner wants this promoted: second monitor, TV, tablet).
+  Resizes up to 7680 × 4320 (the owner wants this promoted: second monitor, TV, tablet).
 - **PitchScope:** version 0.9 beta (a pre-release, so link to `/releases`, not `/releases/latest`), repo `claeslanng/Pitchscope`
 - **Flow FMX Host:** version 0.3, download https://github.com/claeslanng/flow-fmx-host/releases/latest
 - **Requirements:** Windows 10 or 11 (64-bit), a VST3 host. Flow FMX Host also needs WebView2.
