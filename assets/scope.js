@@ -48,7 +48,7 @@
   const faint = css.getPropertyValue("--ink-faint").trim();
 
   // Filled min/max envelope, drawn for columns [from, to)
-  function envelope(hi, lo, from, to, colour, alpha) {
+  function envelope(hi, lo, from, to, color, alpha) {
     if (to - from < 2) return;
     const mid = h / 2, amp = h * 0.46;
     ctx.globalAlpha = alpha;
@@ -57,8 +57,8 @@
     for (let c = from + 1; c < to; c++) ctx.lineTo(c + 0.5, mid - hi[c] * amp);
     for (let c = to - 1; c >= from; c--) ctx.lineTo(c + 0.5, mid - lo[c] * amp);
     ctx.closePath();
-    ctx.fillStyle = colour; ctx.fill();
-    ctx.lineWidth = 1.2; ctx.strokeStyle = colour; ctx.stroke();
+    ctx.fillStyle = color; ctx.fill();
+    ctx.lineWidth = 1.2; ctx.strokeStyle = color; ctx.stroke();
     ctx.globalAlpha = 1;
   }
 

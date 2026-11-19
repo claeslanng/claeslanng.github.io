@@ -61,8 +61,9 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
   Resizes from 240 × 110 up to 7680 × 4320 and has a scope-only view (the owner wants
   this promoted: second monitor, TV, tablet). Colors: picker, #RRGGBB hex box, and a dice
   button for random sidechain colors.
-- **Spelling on the Smartscope page:** US English ("color", "colored", "gray"), matching
-  the plugin (the owner's call, 2026-11-19).
+- **Spelling: US English across the whole site** ("color", "gray", "license"), matching
+  Smartscope's own interface (the owner's call, 2026-11-19). Keep HTML attributes such as
+  `aria-labelledby` as they are.
 - **PitchScope:** version 0.9 beta (a pre-release, so link to `/releases`, not `/releases/latest`), repo `claeslanng/Pitchscope`
 - **Flow FMX Host:** version 0.3, download https://github.com/claeslanng/flow-fmx-host/releases/latest
 - **Requirements:** Windows 10 or 11 (64-bit), a VST3 host. Flow FMX Host also needs WebView2.
@@ -94,11 +95,14 @@ its pixel size, 822 × 302, so it's sharp on high-density screens) and `drag-loo
 poster (1280 × 440, 5.7 s, Zoom x5 on two bars: the arrow rests on the next kick, the
 grabbing hand pulls it one beat into place, lets go, and later drags it back, so it loops
 without a seam; the pointer is drawn by RenderTest to match what the plugin shows), and
-`resize-loop.mp4` + poster (1600 × 702, 13.8 s: dragged from 760 × 360 down to a strip,
-up to fill the frame, scope only on and off, back to 760 × 360).
+`resize-loop.mp4` + poster (1600 × 702, about 8 s: dragged from 760 × 360 down to a strip,
+up to fill the frame, scope only on and off, back to 760 × 360). It's rendered on the page's
+own background, so it's shown without the outline (`.demo-bare`) and shows no box; keep
+that background in sync with `--bg` of `theme-smartscope`. `fullscreen.webp` (1920 × 920,
+rendered at 1x like a big monitor, one bar, kick on sidechain 2 in cyan).
 Captions name the layer colors for each theme (Graphite orange/light gray,
 Midnight cyan/white, Phosphor amber/green, Daylight deep blue/near-black). If the renders
-change what's shown, change the captions too. `fullscreen.webp` is still a hand capture.
+change what's shown, change the captions too.
 
 For other plugins, or a hand capture: ask the owner for real captures from FL Studio: plugin window enlarged to about 2000 px
 wide (or Windows scaling at 200%), Hold pressed, mouse pointer out of the window, saved as
@@ -129,9 +133,7 @@ settings rewrites or deletes that file.
 
 ## Open ideas
 
-- Smartscope's images are rendered from 1.2.0 (see Screenshots). Only `fullscreen.webp`
-  ("Make it as big as you like", under the resize loop) is a hand capture from 1.1,
-  without the corners button.
+- All of Smartscope's images and loops are rendered from 1.2.0 (see Screenshots).
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
 - **Automatic screenshots on release (optional, not set up).** The rendering works (see

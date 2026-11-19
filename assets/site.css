@@ -1,4 +1,4 @@
-/* Claes Lanng Plugins: shared styles. Each page sets its colours with a theme class on <body>. */
+/* Claes Lanng Plugins: shared styles. Each page sets its colors with a theme class on <body>. */
 
 @font-face { font-family: "Archivo Narrow"; src: url("fonts/ArchivoNarrow_700Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Archivo"; src: url("fonts/Archivo_400Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
@@ -117,6 +117,7 @@ figure { margin: 0; }
 .logo-accent { color: var(--accent); }   /* the second half of a plugin name, as in its logo */
 .demo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px 36px; align-items: center; margin-top: clamp(32px, 5vw, 56px); max-width: 980px; }
 .demo-video { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: var(--shot-shadow); background: #1E2023; }
+.demo-video.demo-bare { box-shadow: none; background: var(--bg); }   /* rendered on the page color, so no box */
 .demo h3 { font-size: 26px; line-height: 1.1; margin-bottom: 8px; }
 .demo p { color: var(--text-2); margin: 0; font-size: 16px; }
 
