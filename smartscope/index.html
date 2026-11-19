@@ -100,6 +100,13 @@
         <img src="../assets/img/smartscope/zoom.webp" width="2278" height="783" loading="lazy" alt="Smartscope zoomed in 68 times on the first 14 milliseconds of a kick: a fast click, then slower and slower cycles">
         <figcaption>The kick on sidechain 1 (orange). The bass on this track (white) hasn't started yet.</figcaption>
       </figure>
+      <div class="demo">
+        <video class="demo-video" src="../assets/img/smartscope/drag-loop.mp4" poster="../assets/img/smartscope/drag-loop-poster.webp" width="1280" height="440" muted loop playsinline preload="metadata" aria-label="Smartscope zoomed in, with the mouse dragging the view from one kick to the next"></video>
+        <div>
+          <h3>Move around with the mouse</h3>
+          <p>Scroll to zoom in, then click and drag to slide through the window. Here Smartscope is zoomed in 27 times on a two-bar window with playback stopped, and the view slides from one kick to the next.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -181,5 +188,17 @@
     <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
   </div>
 </footer>
+<script>
+// The drag demo plays only while it's on screen, and not at all if the visitor has asked for reduced motion.
+(function () {
+  var v = document.querySelector(".demo-video");
+  if (!v) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { v.controls = true; return; }
+  if (!("IntersectionObserver" in window)) { v.autoplay = true; v.play(); return; }
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p) p.catch(function () {}); } else { v.pause(); } });
+  }, { threshold: 0.25 }).observe(v);
+})();
+</script>
 </body>
 </html>

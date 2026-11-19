@@ -35,8 +35,12 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 - **Fonts:** Archivo and Archivo Narrow (OFL, self-hosted woff2). No other webfonts.
 - **Copy:** plain and specific, sentence case. No all-caps eyebrow labels, no "→" on
   buttons, no numbered markers unless it's a real sequence (install steps are).
-- **Motion:** only the home-page oscilloscope. It respects reduced motion and pauses
-  off-screen.
+- **Motion:** the home-page oscilloscope, and one small muted demo loop on the Smartscope
+  page (`drag-loop.mp4`, in the zoom section, with a short description beside it). Both
+  respect reduced motion (the loop shows controls instead of playing) and pause
+  off-screen. The owner asked for video loops to stay small and subtle, always with a
+  line saying what they show. Use a muted looping MP4, not a GIF (a GIF of the same loop
+  was 13 times bigger and limited to 256 colours).
 - **Footers** credit "Claes Lanng Plugins is made by Claes Lanng" (linking to
   https://claeslanng.com), the contact email djclaeslanng@gmail.com, and Patreon
   (https://www.patreon.com/claeslanng).
@@ -86,7 +90,10 @@ then tick "Enforce HTTPS" in Settings → Pages.
 ## Open ideas
 
 - All Smartscope images are real captures (`main.webp`, `zoom.webp`, `theme-*.webp`,
-  `settings.webp`). A short screen recording could come later.
+  `settings.webp`).
+- The drag loop is cut from a Gyazo clip (1280 px, end card removed, a short blend at the
+  seam). A new recording that starts and ends on the same view, made with the Windows
+  Snipping Tool at full size, would loop perfectly.
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
