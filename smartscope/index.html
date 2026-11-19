@@ -117,6 +117,10 @@
       <h2 id="size-title">Make it as big as you like</h2>
       <p class="intro">Drag the corner anywhere from a 240&nbsp;×&nbsp;110 strip up to 7680&nbsp;×&nbsp;4320. Detach the window in FL Studio and give it a whole second monitor, a TV or a tablet, or tuck it into a corner. The grid and dB labels get finer as it grows, and the controls make room as it shrinks. One click on the corners button hides everything but the waveform. The size is saved with your project.</p>
       <figure class="shot">
+        <video class="demo-video" src="../assets/img/smartscope/resize-loop.mp4" poster="../assets/img/smartscope/resize-loop-poster.webp" width="1600" height="702" muted loop playsinline preload="metadata" aria-label="Smartscope being resized: dragged down to a small strip as its controls step aside, then up to fill the frame, switched to scope only and back"></video>
+        <figcaption>Dragging the corner: the controls step aside as it shrinks, the grid gets finer as it grows, and the corners button leaves just the waveform.</figcaption>
+      </figure>
+      <figure class="shot shot-after">
         <img src="../assets/img/smartscope/fullscreen.webp" width="1903" height="912" loading="lazy" alt="Smartscope filling a second monitor in FL Studio, showing the kick in blue over the bass in gray">
         <figcaption>Filling a second monitor: the kick on sidechain 2 (blue) over the bass (gray).</figcaption>
       </figure>
@@ -202,15 +206,21 @@
   </div>
 </footer>
 <script>
-// The drag demo plays only while it's on screen, and not at all if the visitor has asked for reduced motion.
+// The demo loops play only while they're on screen, and not at all if the visitor has asked for reduced motion.
 (function () {
-  var v = document.querySelector(".demo-video");
-  if (!v) return;
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { v.controls = true; return; }
-  if (!("IntersectionObserver" in window)) { v.autoplay = true; v.play(); return; }
-  new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { var p = v.play(); if (p) p.catch(function () {}); } else { v.pause(); } });
-  }, { threshold: 0.25 }).observe(v);
+  var videos = document.querySelectorAll(".demo-video");
+  if (!videos.length) return;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var observer = !reduce && "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else { e.target.pause(); }
+    });
+  }, { threshold: 0.25 }) : null;
+  Array.prototype.forEach.call(videos, function (v) {
+    if (reduce) { v.controls = true; return; }
+    if (!observer) { v.autoplay = true; v.play(); return; }
+    observer.observe(v);
+  });
 })();
 </script>
 </body>
