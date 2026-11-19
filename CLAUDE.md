@@ -44,8 +44,11 @@ page also has JSON-LD (SoftwareApplication) and a canonical link.
 
 ## Facts to keep accurate
 
-- **Smartscope:** version 1.1, download https://github.com/claeslanng/Smartscope/releases/latest.
-  Resizes up to 7680 × 4320 (the owner wants this promoted: second monitor, TV, tablet).
+- **Smartscope:** version 1.2, download https://github.com/claeslanng/Smartscope/releases/latest.
+  Resizes from 240 × 110 up to 7680 × 4320, and has a scope-only view (the owner wants
+  this promoted: second monitor, TV, tablet). Colors: picker, #RRGGBB hex box, and a dice
+  button for random sidechain colors.
+- **Spelling:** US English on the Smartscope page ("color", "gray"), matching the plugin.
 - **PitchScope:** version 0.9 beta (a pre-release, so link to `/releases`, not `/releases/latest`), repo `claeslanng/Pitchscope`
 - **Flow FMX Host:** version 0.3, download https://github.com/claeslanng/flow-fmx-host/releases/latest
 - **Requirements:** Windows 10 or 11 (64-bit), a VST3 host. Flow FMX Host also needs WebView2.
