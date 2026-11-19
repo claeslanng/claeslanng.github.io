@@ -85,10 +85,8 @@ then tick "Enforce HTTPS" in Settings → Pages.
 
 ## Open ideas
 
-- A real zoomed-in Smartscope capture to replace `zoom.jpg`, the last synthetic render.
-  When it arrives, check the "about 18 ms" sentence above it against what the capture
-  shows. All other Smartscope images (`main.webp`, `theme-*.webp`, `settings.webp`) are
-  real captures. A short screen recording could come later.
+- All Smartscope images are real captures (`main.webp`, `zoom.webp`, `theme-*.webp`,
+  `settings.webp`). A short screen recording could come later.
 - The owner is adding features to Smartscope (Nov 2026). When a new version ships, update
   the version facts and ask whether the screenshots need redoing.
 - Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
