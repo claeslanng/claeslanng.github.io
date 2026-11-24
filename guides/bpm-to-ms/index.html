@@ -76,7 +76,7 @@
     <div class="wrap">
       <p class="crumbs"><a href="../">Guides</a></p>
       <h1>BPM to ms calculator</h1>
-      <p class="answer">One beat lasts <strong>60,000 ÷ BPM</strong> milliseconds: 428.6 ms at 140 BPM. Type your tempo for every note length, straight, dotted and triplet.</p>
+      <p class="answer">One beat lasts <strong>60,000 ÷ BPM</strong> milliseconds: 468.75 ms at 128 BPM. Type your tempo for every note length, straight, dotted and triplet.</p>
     </div>
   </section>
 
@@ -87,25 +87,26 @@
         <div class="bpm-row">
           <div>
             <label class="small-label" for="bpm">Tempo</label>
-            <div class="bpm-input"><input id="bpm" type="number" inputmode="decimal" min="20" max="400" step="0.1" value="140"><span>BPM</span></div>
+            <div class="bpm-input"><input id="bpm" type="number" inputmode="decimal" min="20" max="400" step="0.1" value="128"><span>BPM</span></div>
           </div>
-          <div class="chips" aria-label="Typical tempos"><button type="button" class="chip" data-bpm="90">Hip-hop 90</button><button type="button" class="chip" data-bpm="113">Amapiano 113</button><button type="button" class="chip" data-bpm="124">House 124</button><button type="button" class="chip" data-bpm="140">Trap 140</button><button type="button" class="chip" data-bpm="174">Drum and bass 174</button></div>
+          <div class="chips" aria-label="Typical tempos"><button type="button" class="chip" data-bpm="90">Hip-hop 90</button><button type="button" class="chip" data-bpm="100">Pop 100</button><button type="button" class="chip" data-bpm="125">House 125</button><button type="button" class="chip" data-bpm="128">EDM 128</button><button type="button" class="chip" data-bpm="136">Garage 136</button><button type="button" class="chip" data-bpm="140">Trap 140</button><button type="button" class="chip" data-bpm="145">Techno 145</button><button type="button" class="chip" data-bpm="174">Drum and bass 174</button></div>
         </div>
         <div class="table-scroll" style="margin-top:20px">
           <table class="data on-paper" id="ms-table">
-            <thead><tr><th scope="col">Note</th><th scope="col">Straight</th><th scope="col">Dotted</th><th scope="col">Triplet</th><th scope="col">As a rate</th></tr></thead>
+            <thead><tr><th scope="col">Note</th><th scope="col">Straight, ms</th><th scope="col">Dotted, ms</th><th scope="col">Triplet, ms</th><th scope="col">Rate, Hz</th></tr></thead>
             <tbody></tbody>
           </table>
         </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
       </div>
-      <p class="fineprint">Dotted is 1.5 times as long, triplet two thirds. "As a rate" is the straight note in Hz, for LFOs and tremolo.</p>
+      <p class="fineprint">Click any number to copy it. Dotted is 1.5 times as long, triplet two thirds. The rate is the straight note in Hz, for LFOs and tremolo.</p>
     </div>
   </section>
 
   <section class="section" aria-labelledby="how-title">
     <div class="wrap prose">
       <h2 id="how-title">The formula</h2>
-      <p>One beat, a quarter note in 4/4, lasts <strong>60,000 ÷ BPM</strong> milliseconds. At 140 BPM that's 428.6 ms. Halve it for an 1/8 note, halve again for a 1/16, and multiply by four for a whole bar.</p>
+      <p>One beat, a quarter note in 4/4, lasts <strong>60,000 ÷ BPM</strong> milliseconds. At 128 BPM that's 468.75 ms. Halve it for an 1/8 note, halve again for a 1/16, and multiply by four for a whole bar.</p>
       <h3>What to use it for</h3>
       <p><strong>Delay.</strong> Set the delay time to an 1/8 or a dotted 1/8 and the echoes land on the grid instead of smearing it. Most DAW delays can sync to tempo, but plugins that only take milliseconds need the number.</p>
       <p><strong>Reverb pre-delay and decay.</strong> A pre-delay of a 1/32 or 1/64 note keeps the dry hit clear. A decay that ends before the next beat keeps the mix from washing out.</p>
@@ -117,25 +118,27 @@
   <section class="section" aria-labelledby="table-title">
     <div class="wrap">
       <h2 id="table-title">Common tempos</h2>
-      <p class="intro">The most used note lengths at common tempos, rounded to 0.1 ms.</p>
+      <p class="intro">The most used note lengths at common tempos, rounded to 0.01 ms. Click a number to copy it.</p>
       <div class="table-scroll">
       <table class="data" style="max-width:760px">
-        <thead><tr><th scope="col">BPM</th><th scope="col">1 bar</th><th scope="col">1/4 note</th><th scope="col">1/8 note</th><th scope="col">1/16 note</th></tr></thead>
+        <thead><tr><th scope="col">BPM</th><th scope="col">1 bar, ms</th><th scope="col">1/4 note, ms</th><th scope="col">1/8 note, ms</th><th scope="col">1/16 note, ms</th></tr></thead>
         <tbody>
-          <tr><th scope="row">70</th><td>3429 ms</td><td>857.1 ms</td><td>428.6 ms</td><td>214.3 ms</td></tr>
-          <tr><th scope="row">80</th><td>3000 ms</td><td>750.0 ms</td><td>375.0 ms</td><td>187.5 ms</td></tr>
-          <tr><th scope="row">90</th><td>2667 ms</td><td>666.7 ms</td><td>333.3 ms</td><td>166.7 ms</td></tr>
-          <tr><th scope="row">100</th><td>2400 ms</td><td>600.0 ms</td><td>300.0 ms</td><td>150.0 ms</td></tr>
-          <tr><th scope="row">110</th><td>2182 ms</td><td>545.5 ms</td><td>272.7 ms</td><td>136.4 ms</td></tr>
-          <tr><th scope="row">120</th><td>2000 ms</td><td>500.0 ms</td><td>250.0 ms</td><td>125.0 ms</td></tr>
-          <tr><th scope="row">124</th><td>1935 ms</td><td>483.9 ms</td><td>241.9 ms</td><td>121.0 ms</td></tr>
-          <tr><th scope="row">128</th><td>1875 ms</td><td>468.8 ms</td><td>234.4 ms</td><td>117.2 ms</td></tr>
-          <tr><th scope="row">130</th><td>1846 ms</td><td>461.5 ms</td><td>230.8 ms</td><td>115.4 ms</td></tr>
-          <tr><th scope="row">140</th><td>1714 ms</td><td>428.6 ms</td><td>214.3 ms</td><td>107.1 ms</td></tr>
-          <tr><th scope="row">150</th><td>1600 ms</td><td>400.0 ms</td><td>200.0 ms</td><td>100.0 ms</td></tr>
-          <tr><th scope="row">160</th><td>1500 ms</td><td>375.0 ms</td><td>187.5 ms</td><td>93.8 ms</td></tr>
-          <tr><th scope="row">170</th><td>1412 ms</td><td>352.9 ms</td><td>176.5 ms</td><td>88.2 ms</td></tr>
-          <tr><th scope="row">174</th><td>1379 ms</td><td>344.8 ms</td><td>172.4 ms</td><td>86.2 ms</td></tr>
+          <tr><th scope="row">70</th><td><button type="button" class="copy" data-copy="3428.57">3428.57</button></td><td><button type="button" class="copy" data-copy="857.14">857.14</button></td><td><button type="button" class="copy" data-copy="428.57">428.57</button></td><td><button type="button" class="copy" data-copy="214.29">214.29</button></td></tr>
+          <tr><th scope="row">80</th><td><button type="button" class="copy" data-copy="3000">3000</button></td><td><button type="button" class="copy" data-copy="750">750</button></td><td><button type="button" class="copy" data-copy="375">375</button></td><td><button type="button" class="copy" data-copy="187.5">187.5</button></td></tr>
+          <tr><th scope="row">90</th><td><button type="button" class="copy" data-copy="2666.67">2666.67</button></td><td><button type="button" class="copy" data-copy="666.67">666.67</button></td><td><button type="button" class="copy" data-copy="333.33">333.33</button></td><td><button type="button" class="copy" data-copy="166.67">166.67</button></td></tr>
+          <tr><th scope="row">100</th><td><button type="button" class="copy" data-copy="2400">2400</button></td><td><button type="button" class="copy" data-copy="600">600</button></td><td><button type="button" class="copy" data-copy="300">300</button></td><td><button type="button" class="copy" data-copy="150">150</button></td></tr>
+          <tr><th scope="row">110</th><td><button type="button" class="copy" data-copy="2181.82">2181.82</button></td><td><button type="button" class="copy" data-copy="545.45">545.45</button></td><td><button type="button" class="copy" data-copy="272.73">272.73</button></td><td><button type="button" class="copy" data-copy="136.36">136.36</button></td></tr>
+          <tr><th scope="row">120</th><td><button type="button" class="copy" data-copy="2000">2000</button></td><td><button type="button" class="copy" data-copy="500">500</button></td><td><button type="button" class="copy" data-copy="250">250</button></td><td><button type="button" class="copy" data-copy="125">125</button></td></tr>
+          <tr><th scope="row">125</th><td><button type="button" class="copy" data-copy="1920">1920</button></td><td><button type="button" class="copy" data-copy="480">480</button></td><td><button type="button" class="copy" data-copy="240">240</button></td><td><button type="button" class="copy" data-copy="120">120</button></td></tr>
+          <tr><th scope="row">128</th><td><button type="button" class="copy" data-copy="1875">1875</button></td><td><button type="button" class="copy" data-copy="468.75">468.75</button></td><td><button type="button" class="copy" data-copy="234.38">234.38</button></td><td><button type="button" class="copy" data-copy="117.19">117.19</button></td></tr>
+          <tr><th scope="row">130</th><td><button type="button" class="copy" data-copy="1846.15">1846.15</button></td><td><button type="button" class="copy" data-copy="461.54">461.54</button></td><td><button type="button" class="copy" data-copy="230.77">230.77</button></td><td><button type="button" class="copy" data-copy="115.38">115.38</button></td></tr>
+          <tr><th scope="row">136</th><td><button type="button" class="copy" data-copy="1764.71">1764.71</button></td><td><button type="button" class="copy" data-copy="441.18">441.18</button></td><td><button type="button" class="copy" data-copy="220.59">220.59</button></td><td><button type="button" class="copy" data-copy="110.29">110.29</button></td></tr>
+          <tr><th scope="row">140</th><td><button type="button" class="copy" data-copy="1714.29">1714.29</button></td><td><button type="button" class="copy" data-copy="428.57">428.57</button></td><td><button type="button" class="copy" data-copy="214.29">214.29</button></td><td><button type="button" class="copy" data-copy="107.14">107.14</button></td></tr>
+          <tr><th scope="row">145</th><td><button type="button" class="copy" data-copy="1655.17">1655.17</button></td><td><button type="button" class="copy" data-copy="413.79">413.79</button></td><td><button type="button" class="copy" data-copy="206.9">206.9</button></td><td><button type="button" class="copy" data-copy="103.45">103.45</button></td></tr>
+          <tr><th scope="row">150</th><td><button type="button" class="copy" data-copy="1600">1600</button></td><td><button type="button" class="copy" data-copy="400">400</button></td><td><button type="button" class="copy" data-copy="200">200</button></td><td><button type="button" class="copy" data-copy="100">100</button></td></tr>
+          <tr><th scope="row">160</th><td><button type="button" class="copy" data-copy="1500">1500</button></td><td><button type="button" class="copy" data-copy="375">375</button></td><td><button type="button" class="copy" data-copy="187.5">187.5</button></td><td><button type="button" class="copy" data-copy="93.75">93.75</button></td></tr>
+          <tr><th scope="row">170</th><td><button type="button" class="copy" data-copy="1411.76">1411.76</button></td><td><button type="button" class="copy" data-copy="352.94">352.94</button></td><td><button type="button" class="copy" data-copy="176.47">176.47</button></td><td><button type="button" class="copy" data-copy="88.24">88.24</button></td></tr>
+          <tr><th scope="row">174</th><td><button type="button" class="copy" data-copy="1379.31">1379.31</button></td><td><button type="button" class="copy" data-copy="344.83">344.83</button></td><td><button type="button" class="copy" data-copy="172.41">172.41</button></td><td><button type="button" class="copy" data-copy="86.21">86.21</button></td></tr>
         </tbody>
       </table>
       </div>
@@ -172,16 +175,20 @@
 <script>
 (function () {
   var input = document.getElementById("bpm"), tbody = document.querySelector("#ms-table tbody");
-  var NOTES = [["1 bar", 4], ["1/2 note", 2], ["1/4 note (one beat)", 1], ["1/8 note", 0.5], ["1/16 note", 0.25], ["1/32 note", 0.125], ["1/64 note", 0.0625]];
-  function fmt(ms) { return (ms >= 1000 ? ms.toFixed(0) : ms >= 100 ? ms.toFixed(1) : ms.toFixed(2)) + " ms"; }
+  var status = document.getElementById("copy-status");
+  var NOTES = [["1 bar", 4], ["1/2 note", 2], ["1/4 note", 1], ["1/8 note", 0.5], ["1/16 note", 0.25], ["1/32 note", 0.125], ["1/64 note", 0.0625]];
+  function num(x, d) { return String(parseFloat(x.toFixed(d))); }
+  function cell(value, unit) {
+    return '<td><button type="button" class="copy" data-copy="' + value + '" aria-label="Copy ' + value + " " + unit + '">' + value + "</button></td>";
+  }
   function render() {
     var bpm = parseFloat(input.value);
     if (!(bpm >= 20 && bpm <= 400)) { tbody.innerHTML = '<tr><td colspan="5">Type a tempo between 20 and 400 BPM.</td></tr>'; return; }
     var q = 60000 / bpm;
     tbody.innerHTML = NOTES.map(function (n) {
       var ms = q * n[1];
-      return '<tr><th scope="row">' + n[0] + "</th><td>" + fmt(ms) + "</td><td>" + fmt(ms * 1.5) + "</td><td>" + fmt(ms * 2 / 3) +
-        "</td><td>" + (1000 / ms).toFixed(ms > 1000 ? 3 : 2) + " Hz</td></tr>";
+      return '<tr><th scope="row">' + n[0] + "</th>" + cell(num(ms, 2), "ms") + cell(num(ms * 1.5, 2), "ms") +
+        cell(num(ms * 2 / 3, 2), "ms") + cell(num(1000 / ms, 3), "Hz") + "</tr>";
     }).join("");
     document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(parseFloat(c.dataset.bpm) === bpm)); });
   }
@@ -190,6 +197,35 @@
     c.addEventListener("click", function () { input.value = c.dataset.bpm; render(); });
   });
   render();
+
+  // Click a number to copy it (just the number, no unit, ready to paste into a plugin).
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      ok ? resolve() : reject();
+    });
+  }
+  var timer = null;
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".copy");
+    if (!b) return;
+    var text = b.getAttribute("data-copy");
+    copyText(text).then(function () {
+      document.querySelectorAll(".copy.is-copied").forEach(function (x) { x.classList.remove("is-copied"); });
+      b.classList.add("is-copied");
+      if (status) status.textContent = "Copied " + text;
+      clearTimeout(timer);
+      timer = setTimeout(function () { b.classList.remove("is-copied"); if (status) status.textContent = ""; }, 1600);
+    }, function () {
+      if (status) status.textContent = "Couldn't copy. Select the number and copy it by hand.";
+    });
+  });
 })();
 </script>
 </body>

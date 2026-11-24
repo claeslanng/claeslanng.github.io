@@ -155,7 +155,9 @@ other than the note pages are plain HTML: edit them directly, listen buttons fro
 guides/                         index of all guides
 guides/kick-808-phase/          live phase demo -> Smartscope
 guides/tune-808-to-key/         5 steps + "which notes for my key" table -> PitchScope
-guides/bpm-to-ms/               tempo calculator + common-tempo table -> Smartscope
+guides/bpm-to-ms/               tempo calculator (default 128; owner picked the genre buttons: Hip-hop 90,
+                                Pop 100, House 125, EDM 128, Garage 136, Trap 140, Techno 145, DnB 174);
+                                click any number to copy it (number only, units in headers) -> Smartscope
 guides/camelot-wheel/           clickable SVG wheel + all 24 codes -> PitchScope, claeslanng.com
 guides/flow-music-plugins-windows/  .fmx on Windows, steps + FAQ -> Flow FMX Host
 guides/bass-disappears-in-mono/ stereo/mono demo with a mono frequency plot -> MonoSafe
