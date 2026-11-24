@@ -140,7 +140,10 @@ settings rewrites or deletes that file.
   Screenshots); a GitHub Actions job in the Smartscope repo could run it on each release
   and push the images and version number here. It needs a token or deploy key with write
   access to this repo, added by the owner as a secret in the Smartscope repo.
-- Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up.
+- Privacy-friendly visitor stats (e.g. GoatCounter). The owner would need to sign up. The
+  download buttons already carry `data-goatcounter-click` names (download-smartscope-top,
+  download-fmx-monosafe, ...), so once he sends his site code, add GoatCounter's script tag
+  to every page (and to `head()` in `tools/make_note_pages.py`) and downloads are counted too.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
 
@@ -179,7 +182,8 @@ Rules for every guide:
   No filler pages: if a page would only swap a word, don't publish it.
 - Ends with one plugin, the one that solves the problem on the page.
 - Octaves: middle C is C4, like PitchScope; always give FL Studio's name too (one higher).
-- Add new guides to `guides/index.html` and `sitemap.xml`.
+- Add new guides to `guides/index.html` and `sitemap.xml`, and to the "Guides" section at the
+  bottom of the plugin page it leads to (`.related` cards, styles in `site.css`).
 
 ## Google
 Search basics are in place on every page (title, description, canonical, Open Graph,
