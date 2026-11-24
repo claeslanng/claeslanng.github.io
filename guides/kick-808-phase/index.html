@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kick and 808 phase: why they cancel, and how to fix it | Claes Lanng Plugins</title>
+<meta name="description" content="When a kick and an 808 play the same low note a few milliseconds apart, they can cancel each other out. Try it in a live demo, then fix it on your own track.">
+<meta property="og:title" content="Kick and 808 phase: why they cancel, and how to fix it">
+<meta property="og:description" content="A kick and an 808 a few milliseconds apart can cancel each other out. Try it in a live demo.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/smartscope/main-share.jpg">
+<meta property="og:url" content="https://claeslanng.shop/guides/kick-808-phase/">
+<meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/guides/kick-808-phase/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/guides.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "Kick and 808 phase: why they cancel, and how to fix it",
+ "description": "When a kick and an 808 play the same low note a few milliseconds apart, they can cancel each other out.",
+ "url": "https://claeslanng.shop/guides/kick-808-phase/",
+ "dateModified": "2026-11-24",
+ "author": { "@type": "Person", "name": "Claes Lanng", "url": "https://claeslanng.com" },
+ "publisher": { "@type": "Organization", "name": "Claes Lanng Plugins", "url": "https://claeslanng.shop/" }
+}
+</script>
+</head>
+<body class="theme-brand">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../../smartscope/">Smartscope</a>
+      <a href="../../pitchscope/">PitchScope</a>
+      <a href="../../flow-fmx-host/">Flow FMX Host</a>
+      <a href="../" aria-current="page">Guides</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">Guides</a></p>
+      <h1>Kick and 808 phase</h1>
+      <p class="answer">When a kick and an 808 play the same low note a little out of time, their waves can push in opposite directions and cancel out. The worst point is <strong>half a cycle</strong> apart: 10.8 ms for an 808 on F#1.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="demo-title">
+    <div class="wrap">
+      <h2 id="demo-title">Try it</h2>
+      <p class="intro">Two sine waves on the same note: the kick's low tone and the 808. Slide the 808 later and watch the black line, which is what you actually hear.</p>
+      <div class="demo-box">
+        <canvas id="phase-canvas" aria-label="Two waves and their sum" role="img"></canvas>
+        <p class="legend"><i style="background:#F25A22"></i>Kick &nbsp; <i style="background:#A39A8E"></i>808 &nbsp; <i style="background:#1A1511;height:4px"></i>Both together</p>
+        <div class="demo-controls">
+          <div>
+            <label for="ph-note">Note</label>
+            <select id="ph-note"></select>
+          </div>
+          <div>
+            <label for="ph-offset">808 starts later by <output id="ph-offset-out">0.0 ms</output></label>
+            <input id="ph-offset" type="range" min="0" max="30" step="0.1" value="0">
+          </div>
+          <div>
+            <p class="check"><input id="ph-flip" type="checkbox"><label for="ph-flip" style="margin:0;font-size:16px;color:inherit">Flip the 808's polarity</label></p>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div>Offset<b id="ph-deg">0°</b></div>
+          <div>Low end, compared to in phase<b id="ph-db">0.0 dB</b></div>
+          <div>Cancels completely at<b id="ph-half">10.8 ms</b></div>
+          <div style="align-self:end"><button class="btn btn-quiet" id="ph-listen" type="button" aria-pressed="false">Listen</button></div>
+        </div>
+      </div>
+      <p class="fineprint">Headphones or a subwoofer help: laptop and phone speakers can't play these notes. The sound is quiet and stops after three seconds.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap prose">
+      <h2 id="why-title">Why it happens</h2>
+      <p>A low note is a slow wave. An 808 on F#1 swings up and down 46 times a second, so one cycle takes 21.6 ms. If the kick's tone is on the same note and starts half a cycle later, its wave goes down exactly when the 808's goes up. Added together, they cancel.</p>
+      <p>Lower notes have longer cycles, so they can be further apart before they cancel: 12.1 ms for E1, 8.1 ms for B1. The <a href="../808-notes/">808 note chart</a> lists the cycle for every note.</p>
+      <h3>Delay and polarity aren't the same</h3>
+      <p>Flipping polarity turns the whole wave upside down, so it cancels every frequency at once when both sounds are lined up. A delay only cancels the notes it happens to put half a cycle apart. That's why flipping polarity can save a kick and 808 that are slightly late, or ruin a pair that was already fine. Try both in the demo.</p>
+      <h3>A real kick is harder</h3>
+      <p>A kick isn't a steady note: it starts high and drops to its pitch within its first few dozen milliseconds. So a kick and an 808 can add up in one moment and cancel in the next. You can't hear that clearly on its own, and you can't work it out with a calculator. You have to look at the two waves together.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fix-title">
+    <div class="wrap">
+      <h2 id="fix-title">How to fix it</h2>
+      <p class="intro">Look first, then pick the fix that suits the track.</p>
+      <dl class="features">
+        <div><dt>Nudge the 808</dt><dd>Move the 808 a few milliseconds earlier or later until the waves swing the same way where they overlap.</dd></div>
+        <div><dt>Flip the polarity</dt><dd>Most DAWs have a polarity or phase switch on the mixer channel. If the low end gets bigger, keep it. If it gets thinner, switch it back.</dd></div>
+        <div><dt>Tune the kick to the 808</dt><dd>A kick that settles on the 808's note, or a fifth away, blends instead of beating against it. See the note pages, like <a href="../808-notes/f-sharp-1/">F#1</a>.</dd></div>
+        <div><dt>Let them take turns</dt><dd>Sidechain the 808 to duck under the kick, or start the 808 a little after the kick's tone, so they don't overlap at all.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="next">
+        <div>
+          <h2>See it on your own track</h2>
+          <p>Smartscope shows your kick and 808 as two layers, locked to your project's tempo so the picture stands still while the loop plays. Zoom in to single samples to line them up to the millisecond. It's free, for Windows.</p>
+          <div class="actions">
+            <a class="btn btn-download" href="../../smartscope/">Get Smartscope</a>
+          </div>
+        </div>
+        <img src="../../assets/img/smartscope/main-share.jpg" width="1200" height="413" loading="lazy" alt="Smartscope showing a kick in orange and the bass in gray coming in as the kick dies away">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>The demo uses two pure sine waves to show the idea. Real kicks and 808s have more going on, which is why it helps to look at them on a scope.</p>
+    <nav aria-label="Footer">
+      <a href="../">All guides</a>
+      <a href="../../">All plugins</a>
+    </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+  var select = document.getElementById("ph-note");
+  for (var midi = 16; midi <= 40; midi++) {           // E0 to E2
+    var o = document.createElement("option");
+    var hz = 440 * Math.pow(2, (midi - 69) / 12);
+    o.value = hz;
+    o.textContent = NAMES[midi % 12] + (Math.floor(midi / 12) - 1) + "  (" + hz.toFixed(2) + " Hz)";
+    if (midi === 30) o.selected = true;                // F#1
+    select.appendChild(o);
+  }
+
+  var canvas = document.getElementById("phase-canvas");
+  var offset = document.getElementById("ph-offset");
+  var flip = document.getElementById("ph-flip");
+  var out = {
+    offset: document.getElementById("ph-offset-out"),
+    deg: document.getElementById("ph-deg"),
+    db: document.getElementById("ph-db"),
+    half: document.getElementById("ph-half")
+  };
+
+  function state() {
+    return { hz: parseFloat(select.value), ms: parseFloat(offset.value), sign: flip.checked ? -1 : 1 };
+  }
+
+  function draw() {
+    var s = state();
+    var dpr = window.devicePixelRatio || 1;
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    var g = canvas.getContext("2d");
+    g.scale(dpr, dpr);
+    g.clearRect(0, 0, w, h);
+
+    var span = 50;                                     // ms shown across the canvas
+    var mid = h / 2, amp = h * 0.22;
+    g.strokeStyle = "#D3CCC0"; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(0, mid); g.lineTo(w, mid); g.stroke();
+    g.fillStyle = "#665D53"; g.font = "600 12px Archivo, sans-serif";
+    for (var t = 0; t <= span; t += 10) {
+      var x = t / span * w;
+      g.fillRect(Math.min(x, w - 1), h - 14, 1, 6);
+      if (t > 0 && t < span) g.fillText(t + " ms", x + 4, h - 3);
+    }
+
+    function wave(fn, color, width) {
+      g.strokeStyle = color; g.lineWidth = width; g.beginPath();
+      for (var px = 0; px <= w; px++) {
+        var y = mid - fn(px / w * span / 1000) * amp;
+        if (px === 0) g.moveTo(px, y); else g.lineTo(px, y);
+      }
+      g.stroke();
+    }
+    var wr = 2 * Math.PI * s.hz, d = s.ms / 1000;
+    wave(function (t) { return Math.sin(wr * t); }, "#F25A22", 2);
+    wave(function (t) { return s.sign * Math.sin(wr * (t - d)); }, "#A39A8E", 2);
+    wave(function (t) { return Math.sin(wr * t) + s.sign * Math.sin(wr * (t - d)); }, "#1A1511", 3.5);
+
+    var level = Math.sqrt(Math.max(0, 2 + 2 * s.sign * Math.cos(wr * d))) / 2;
+    var db = level < 0.001 ? -60 : 20 * Math.log10(level);
+    var deg = ((s.ms / (1000 / s.hz)) * 360) % 360;
+    out.offset.textContent = s.ms.toFixed(1) + " ms";
+    out.deg.textContent = Math.round(deg) + "°" + (s.sign < 0 ? " + flip" : "");
+    out.db.textContent = (db <= -59.9 ? "silent" : (db > -0.05 ? "0.0" : db.toFixed(1)) + " dB");
+    out.db.className = db < -6 ? "bad" : "";
+    out.half.textContent = (500 / s.hz).toFixed(1) + " ms";
+  }
+
+  [select, offset, flip].forEach(function (el) { el.addEventListener("input", draw); });
+  window.addEventListener("resize", draw);
+  draw();
+
+  // Listen: both sines through the same gain, the 808 through a delay (and an inverter).
+  var ctx = null, playing = null, btn = document.getElementById("ph-listen");
+  function stop() {
+    if (!playing) return;
+    var p = playing; playing = null;
+    p.gain.gain.setTargetAtTime(0, ctx.currentTime, 0.04);
+    p.oscs.forEach(function (o) { o.stop(ctx.currentTime + 0.3); });
+    btn.setAttribute("aria-pressed", "false");
+  }
+  btn.addEventListener("click", function () {
+    if (playing) { stop(); return; }
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === "suspended") ctx.resume();
+    var s = state(), t = ctx.currentTime;
+    var gain = ctx.createGain();
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(0.15, t + 0.08);
+    gain.gain.setValueAtTime(0.15, t + 2.6);
+    gain.gain.linearRampToValueAtTime(0, t + 3);
+    gain.connect(ctx.destination);
+    var kick = ctx.createOscillator(), bass = ctx.createOscillator();
+    kick.frequency.value = bass.frequency.value = s.hz;
+    var delay = ctx.createDelay(0.1); delay.delayTime.value = s.ms / 1000;
+    var pol = ctx.createGain(); pol.gain.value = s.sign;
+    kick.connect(gain);
+    bass.connect(delay).connect(pol).connect(gain);
+    kick.start(t); bass.start(t);
+    kick.stop(t + 3.05); bass.stop(t + 3.05);
+    playing = { oscs: [kick, bass], gain: gain };
+    btn.setAttribute("aria-pressed", "true");
+    kick.onended = function () { if (playing && playing.oscs[0] === kick) { playing = null; btn.setAttribute("aria-pressed", "false"); } };
+  });
+})();
+</script>
+</body>
+</html>
