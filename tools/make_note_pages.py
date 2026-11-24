@@ -150,6 +150,7 @@ def head(title, description, canonical, depth, extra_ld):
 <link rel="stylesheet" href="{up}assets/site.css">
 <link rel="stylesheet" href="{up}assets/guides.css">
 {ld}
+<script data-goatcounter="https://claeslanng.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body class="theme-brand">
 
