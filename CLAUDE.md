@@ -144,7 +144,7 @@ settings rewrites or deletes that file.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
 
-## Guides (preview, branch `guides-preview`)
+## Guides (live since 2026-11-24)
 
 Practical pages that bring search traffic and lead to a plugin. Brand theme (kraft + white
 label), extra styles in `assets/guides.css`. Every page's nav has a Guides link. The guides
