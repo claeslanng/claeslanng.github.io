@@ -144,6 +144,41 @@ settings rewrites or deletes that file.
 - A separate support address on the domain (e.g. plugins@claeslanng.shop forwarding to
   Gmail), set up by the owner in GoDaddy.
 
+## Guides (live since 2026-11-24)
+
+Practical pages that bring search traffic and lead to a plugin. Brand theme (kraft + white
+label), extra styles in `assets/guides.css`. Every page's nav has a Guides link. The guides
+other than the note pages are plain HTML: edit them directly, listen buttons from `assets/tone.js`
+(`<button data-tone="46.25">`).
+
+```
+guides/                         index of all guides
+guides/kick-808-phase/          live phase demo -> Smartscope
+guides/tune-808-to-key/         5 steps + "which notes for my key" table -> PitchScope
+guides/bpm-to-ms/               tempo calculator + common-tempo table -> Smartscope
+guides/camelot-wheel/           clickable SVG wheel + all 24 codes -> PitchScope, claeslanng.com
+guides/flow-music-plugins-windows/  .fmx on Windows, steps + FAQ -> Flow FMX Host
+guides/bass-disappears-in-mono/ stereo/mono demo with a mono frequency plot -> MonoSafe
+guides/808-notes/               chart of every note C0-B2 (generated)
+guides/808-notes/<note>/        one page per note, e.g. f-sharp-1 (generated) -> PitchScope
+tools/make_note_pages.py        builds the chart and note pages; PUBLISH lists the notes
+```
+
+FL Studio facts confirmed by the owner (2026-11-24, his screenshot in
+`assets/img/guides/fl-root-note.webp`): the root note is set by right-clicking a key on the
+keyboard in the second Channel settings tab (envelope icon); the label reads "Root note:
+D#5"; the "Fine tune" slider sits next to it. He sets the root in FL's default octave (D#5).
+
+Rules for every guide:
+- Answer the question in the first sentence, with the number (people and AI tools quote it).
+- Every number is calculated or checked, never guessed. Note pages get all their numbers
+  from `make_note_pages.py`; edit the template there, not the HTML, then rerun it.
+- Something only this site has: a demo, a calculation, or the plugin author's experience.
+  No filler pages: if a page would only swap a word, don't publish it.
+- Ends with one plugin, the one that solves the problem on the page.
+- Octaves: middle C is C4, like PitchScope; always give FL Studio's name too (one higher).
+- Add new guides to `guides/index.html` and `sitemap.xml`.
+
 ## Google
 Search basics are in place on every page (title, description, canonical, Open Graph,
 JSON-LD: Organization on the home page, SoftwareApplication per plugin), plus robots.txt

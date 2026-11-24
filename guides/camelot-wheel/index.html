@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camelot wheel: which keys mix together (interactive) | Claes Lanng Plugins</title>
+<meta name="description" content="An interactive Camelot wheel: click a key to see which keys mix with it. Plus all 24 Camelot codes, the three safe moves for harmonic mixing, and the energy-lift trick.">
+<meta property="og:title" content="Camelot wheel: which keys mix together (interactive)">
+<meta property="og:description" content="An interactive Camelot wheel: click a key to see which keys mix with it. Plus all 24 Camelot codes, the three safe moves for harmonic mixing, and the energy-lift trick.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/pitchscope/camelot-a-minor.jpg">
+<meta property="og:url" content="https://claeslanng.shop/guides/camelot-wheel/">
+<meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/guides/camelot-wheel/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/guides.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "Camelot wheel: which keys mix together (interactive)",
+ "description": "An interactive Camelot wheel: click a key to see which keys mix with it. Plus all 24 Camelot codes, the three safe moves for harmonic mixing, and the energy-lift trick.",
+ "url": "https://claeslanng.shop/guides/camelot-wheel/",
+ "dateModified": "2026-11-24",
+ "author": {
+  "@type": "Person",
+  "name": "Claes Lanng",
+  "url": "https://claeslanng.com"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Claes Lanng Plugins",
+  "url": "https://claeslanng.shop/"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Guides",
+   "item": "https://claeslanng.shop/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Camelot wheel",
+   "item": "https://claeslanng.shop/guides/camelot-wheel/"
+  }
+ ]
+}
+</script>
+</head>
+<body class="theme-brand">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../../smartscope/">Smartscope</a>
+      <a href="../../pitchscope/">PitchScope</a>
+      <a href="../../flow-fmx-host/">Flow FMX Host</a>
+      <a href="../" aria-current="page">Guides</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">Guides</a></p>
+      <h1>Camelot wheel</h1>
+      <p class="answer">Keys that sit <strong>next to each other</strong> on the wheel mix without clashing: the same code, one number up or down, or the other ring with the same number. Click a key to see its matches.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="wheel-title">
+    <div class="wrap">
+      <h2 id="wheel-title" class="visually-hidden">The wheel</h2>
+      <div class="wheel-grid">
+        <div class="demo-box wheel-box"><svg id="wheel" viewBox="0 0 400 400" role="group" aria-label="Camelot wheel"><g class="seg" data-code="1B" tabindex="0" role="button" aria-label="1B, B major"><path d="M250.73,10.68 A196,196 0 0 1 338.59,61.41 L296.17,103.83 A136,136 0 0 0 235.20,68.63 Z" fill="hsl(0 55% 80%)"/><text x="283.0" y="53.2" class="k">B</text><text x="283.0" y="68.2" class="c">1B</text></g><g class="seg" data-code="1A" tabindex="0" role="button" aria-label="1A, G# minor (Ab minor)"><path d="M235.20,68.63 A136,136 0 0 1 296.17,103.83 L255.15,144.85 A78,78 0 0 0 220.19,124.66 Z" fill="hsl(0 55% 70%)"/><text x="253.5" y="104.3" class="k">G#m</text><text x="253.5" y="119.3" class="c">1A</text></g><g class="seg" data-code="2B" tabindex="0" role="button" aria-label="2B, F# major (Gb major)"><path d="M338.59,61.41 A196,196 0 0 1 389.32,149.27 L331.37,164.80 A136,136 0 0 0 296.17,103.83 Z" fill="hsl(30 55% 80%)"/><text x="343.8" y="114.0" class="k">F#</text><text x="343.8" y="129.0" class="c">2B</text></g><g class="seg" data-code="2A" tabindex="0" role="button" aria-label="2A, D# minor (Eb minor)"><path d="M296.17,103.83 A136,136 0 0 1 331.37,164.80 L275.34,179.81 A78,78 0 0 0 255.15,144.85 Z" fill="hsl(30 55% 70%)"/><text x="292.7" y="143.5" class="k">D#m</text><text x="292.7" y="158.5" class="c">2A</text></g><g class="seg" data-code="3B" tabindex="0" role="button" aria-label="3B, Db major"><path d="M389.32,149.27 A196,196 0 0 1 389.32,250.73 L331.37,235.20 A136,136 0 0 0 331.37,164.80 Z" fill="hsl(60 55% 80%)"/><text x="366.0" y="197.0" class="k">Db</text><text x="366.0" y="212.0" class="c">3B</text></g><g class="seg" data-code="3A" tabindex="0" role="button" aria-label="3A, Bb minor"><path d="M331.37,164.80 A136,136 0 0 1 331.37,235.20 L275.34,220.19 A78,78 0 0 0 275.34,179.81 Z" fill="hsl(60 55% 70%)"/><text x="307.0" y="197.0" class="k">Bbm</text><text x="307.0" y="212.0" class="c">3A</text></g><g class="seg" data-code="4B" tabindex="0" role="button" aria-label="4B, Ab major"><path d="M389.32,250.73 A196,196 0 0 1 338.59,338.59 L296.17,296.17 A136,136 0 0 0 331.37,235.20 Z" fill="hsl(90 55% 80%)"/><text x="343.8" y="280.0" class="k">Ab</text><text x="343.8" y="295.0" class="c">4B</text></g><g class="seg" data-code="4A" tabindex="0" role="button" aria-label="4A, F minor"><path d="M331.37,235.20 A136,136 0 0 1 296.17,296.17 L255.15,255.15 A78,78 0 0 0 275.34,220.19 Z" fill="hsl(90 55% 70%)"/><text x="292.7" y="250.5" class="k">Fm</text><text x="292.7" y="265.5" class="c">4A</text></g><g class="seg" data-code="5B" tabindex="0" role="button" aria-label="5B, Eb major"><path d="M338.59,338.59 A196,196 0 0 1 250.73,389.32 L235.20,331.37 A136,136 0 0 0 296.17,296.17 Z" fill="hsl(120 55% 80%)"/><text x="283.0" y="340.8" class="k">Eb</text><text x="283.0" y="355.8" class="c">5B</text></g><g class="seg" data-code="5A" tabindex="0" role="button" aria-label="5A, C minor"><path d="M296.17,296.17 A136,136 0 0 1 235.20,331.37 L220.19,275.34 A78,78 0 0 0 255.15,255.15 Z" fill="hsl(120 55% 70%)"/><text x="253.5" y="289.7" class="k">Cm</text><text x="253.5" y="304.7" class="c">5A</text></g><g class="seg" data-code="6B" tabindex="0" role="button" aria-label="6B, Bb major"><path d="M250.73,389.32 A196,196 0 0 1 149.27,389.32 L164.80,331.37 A136,136 0 0 0 235.20,331.37 Z" fill="hsl(150 55% 80%)"/><text x="200.0" y="363.0" class="k">Bb</text><text x="200.0" y="378.0" class="c">6B</text></g><g class="seg" data-code="6A" tabindex="0" role="button" aria-label="6A, G minor"><path d="M235.20,331.37 A136,136 0 0 1 164.80,331.37 L179.81,275.34 A78,78 0 0 0 220.19,275.34 Z" fill="hsl(150 55% 70%)"/><text x="200.0" y="304.0" class="k">Gm</text><text x="200.0" y="319.0" class="c">6A</text></g><g class="seg" data-code="7B" tabindex="0" role="button" aria-label="7B, F major"><path d="M149.27,389.32 A196,196 0 0 1 61.41,338.59 L103.83,296.17 A136,136 0 0 0 164.80,331.37 Z" fill="hsl(180 55% 80%)"/><text x="117.0" y="340.8" class="k">F</text><text x="117.0" y="355.8" class="c">7B</text></g><g class="seg" data-code="7A" tabindex="0" role="button" aria-label="7A, D minor"><path d="M164.80,331.37 A136,136 0 0 1 103.83,296.17 L144.85,255.15 A78,78 0 0 0 179.81,275.34 Z" fill="hsl(180 55% 70%)"/><text x="146.5" y="289.7" class="k">Dm</text><text x="146.5" y="304.7" class="c">7A</text></g><g class="seg" data-code="8B" tabindex="0" role="button" aria-label="8B, C major"><path d="M61.41,338.59 A196,196 0 0 1 10.68,250.73 L68.63,235.20 A136,136 0 0 0 103.83,296.17 Z" fill="hsl(210 55% 80%)"/><text x="56.2" y="280.0" class="k">C</text><text x="56.2" y="295.0" class="c">8B</text></g><g class="seg" data-code="8A" tabindex="0" role="button" aria-label="8A, A minor"><path d="M103.83,296.17 A136,136 0 0 1 68.63,235.20 L124.66,220.19 A78,78 0 0 0 144.85,255.15 Z" fill="hsl(210 55% 70%)"/><text x="107.3" y="250.5" class="k">Am</text><text x="107.3" y="265.5" class="c">8A</text></g><g class="seg" data-code="9B" tabindex="0" role="button" aria-label="9B, G major"><path d="M10.68,250.73 A196,196 0 0 1 10.68,149.27 L68.63,164.80 A136,136 0 0 0 68.63,235.20 Z" fill="hsl(240 55% 80%)"/><text x="34.0" y="197.0" class="k">G</text><text x="34.0" y="212.0" class="c">9B</text></g><g class="seg" data-code="9A" tabindex="0" role="button" aria-label="9A, E minor"><path d="M68.63,235.20 A136,136 0 0 1 68.63,164.80 L124.66,179.81 A78,78 0 0 0 124.66,220.19 Z" fill="hsl(240 55% 70%)"/><text x="93.0" y="197.0" class="k">Em</text><text x="93.0" y="212.0" class="c">9A</text></g><g class="seg" data-code="10B" tabindex="0" role="button" aria-label="10B, D major"><path d="M10.68,149.27 A196,196 0 0 1 61.41,61.41 L103.83,103.83 A136,136 0 0 0 68.63,164.80 Z" fill="hsl(270 55% 80%)"/><text x="56.2" y="114.0" class="k">D</text><text x="56.2" y="129.0" class="c">10B</text></g><g class="seg" data-code="10A" tabindex="0" role="button" aria-label="10A, B minor"><path d="M68.63,164.80 A136,136 0 0 1 103.83,103.83 L144.85,144.85 A78,78 0 0 0 124.66,179.81 Z" fill="hsl(270 55% 70%)"/><text x="107.3" y="143.5" class="k">Bm</text><text x="107.3" y="158.5" class="c">10A</text></g><g class="seg" data-code="11B" tabindex="0" role="button" aria-label="11B, A major"><path d="M61.41,61.41 A196,196 0 0 1 149.27,10.68 L164.80,68.63 A136,136 0 0 0 103.83,103.83 Z" fill="hsl(300 55% 80%)"/><text x="117.0" y="53.2" class="k">A</text><text x="117.0" y="68.2" class="c">11B</text></g><g class="seg" data-code="11A" tabindex="0" role="button" aria-label="11A, F# minor"><path d="M103.83,103.83 A136,136 0 0 1 164.80,68.63 L179.81,124.66 A78,78 0 0 0 144.85,144.85 Z" fill="hsl(300 55% 70%)"/><text x="146.5" y="104.3" class="k">F#m</text><text x="146.5" y="119.3" class="c">11A</text></g><g class="seg" data-code="12B" tabindex="0" role="button" aria-label="12B, E major"><path d="M149.27,10.68 A196,196 0 0 1 250.73,10.68 L235.20,68.63 A136,136 0 0 0 164.80,68.63 Z" fill="hsl(330 55% 80%)"/><text x="200.0" y="31.0" class="k">E</text><text x="200.0" y="46.0" class="c">12B</text></g><g class="seg" data-code="12A" tabindex="0" role="button" aria-label="12A, C# minor"><path d="M164.80,68.63 A136,136 0 0 1 235.20,68.63 L220.19,124.66 A78,78 0 0 0 179.81,124.66 Z" fill="hsl(330 55% 70%)"/><text x="200.0" y="90.0" class="k">C#m</text><text x="200.0" y="105.0" class="c">12A</text></g><circle cx="200" cy="200" r="76" fill="var(--paper-field)" stroke="var(--ink-faint)"/><text x="200" y="196" class="mid" id="wheel-mid">Pick a key</text><text x="200" y="216" class="mid2" id="wheel-mid2">to see what mixes</text></svg></div>
+        <div class="wheel-info" aria-live="polite">
+          <h3 id="w-title">Click a key on the wheel</h3>
+          <p id="w-text">The keys that mix well with it light up. Outer ring: major keys (B). Inner ring: minor keys (A).</p>
+          <ul id="w-list" class="mix-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="rules-title">
+    <div class="wrap prose">
+      <h2 id="rules-title">The three safe moves</h2>
+      <p>Every key gets a number from 1 to 12 and a letter: A for minor, B for major. Neighbors on the wheel share all but one note, so they mix without clashing.</p>
+      <p><strong>Same code.</strong> 8A to 8A: the same key. Always safe.</p>
+      <p><strong>One step around.</strong> 8A to 7A or 9A: up or down a fifth. Smooth, and keeps the mood.</p>
+      <p><strong>Switch rings.</strong> 8A to 8B: A minor to C major, the relative key. Same notes, brighter or darker mood.</p>
+      <h3>For an energy lift</h3>
+      <p>Seven steps around the wheel, for example 8A to 3A, moves the key up one semitone. It isn't a smooth blend, but it's a well-known trick to lift a set at a drop or a quick cut.</p>
+      <h3>For producers too</h3>
+      <p>The same rules help when you pick samples: a loop in 8A works over chords in 8A, 7A, 9A or 8B. Check the key of every sample before you build on it.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="all-title">
+    <div class="wrap">
+      <h2 id="all-title">All 24 keys</h2>
+      <p class="intro">Each Camelot code, its key, and the codes that mix with it.</p>
+      <div class="table-scroll">
+      <table class="data" style="max-width:820px">
+        <thead><tr><th scope="col">Code</th><th scope="col">Key</th><th scope="col">Mixes with</th><th scope="col">One semitone up</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1A</th><td>G# minor (Ab minor)</td><td>12A, 2A, 1B</td><td>8A</td></tr>
+          <tr><th scope="row">1B</th><td>B major</td><td>12B, 2B, 1A</td><td>8B</td></tr>
+          <tr><th scope="row">2A</th><td>D# minor (Eb minor)</td><td>1A, 3A, 2B</td><td>9A</td></tr>
+          <tr><th scope="row">2B</th><td>F# major (Gb major)</td><td>1B, 3B, 2A</td><td>9B</td></tr>
+          <tr><th scope="row">3A</th><td>Bb minor</td><td>2A, 4A, 3B</td><td>10A</td></tr>
+          <tr><th scope="row">3B</th><td>Db major</td><td>2B, 4B, 3A</td><td>10B</td></tr>
+          <tr><th scope="row">4A</th><td>F minor</td><td>3A, 5A, 4B</td><td>11A</td></tr>
+          <tr><th scope="row">4B</th><td>Ab major</td><td>3B, 5B, 4A</td><td>11B</td></tr>
+          <tr><th scope="row">5A</th><td>C minor</td><td>4A, 6A, 5B</td><td>12A</td></tr>
+          <tr><th scope="row">5B</th><td>Eb major</td><td>4B, 6B, 5A</td><td>12B</td></tr>
+          <tr><th scope="row">6A</th><td>G minor</td><td>5A, 7A, 6B</td><td>1A</td></tr>
+          <tr><th scope="row">6B</th><td>Bb major</td><td>5B, 7B, 6A</td><td>1B</td></tr>
+          <tr><th scope="row">7A</th><td>D minor</td><td>6A, 8A, 7B</td><td>2A</td></tr>
+          <tr><th scope="row">7B</th><td>F major</td><td>6B, 8B, 7A</td><td>2B</td></tr>
+          <tr><th scope="row">8A</th><td>A minor</td><td>7A, 9A, 8B</td><td>3A</td></tr>
+          <tr><th scope="row">8B</th><td>C major</td><td>7B, 9B, 8A</td><td>3B</td></tr>
+          <tr><th scope="row">9A</th><td>E minor</td><td>8A, 10A, 9B</td><td>4A</td></tr>
+          <tr><th scope="row">9B</th><td>G major</td><td>8B, 10B, 9A</td><td>4B</td></tr>
+          <tr><th scope="row">10A</th><td>B minor</td><td>9A, 11A, 10B</td><td>5A</td></tr>
+          <tr><th scope="row">10B</th><td>D major</td><td>9B, 11B, 10A</td><td>5B</td></tr>
+          <tr><th scope="row">11A</th><td>F# minor</td><td>10A, 12A, 11B</td><td>6A</td></tr>
+          <tr><th scope="row">11B</th><td>A major</td><td>10B, 12B, 11A</td><td>6B</td></tr>
+          <tr><th scope="row">12A</th><td>C# minor</td><td>11A, 1A, 12B</td><td>7A</td></tr>
+          <tr><th scope="row">12B</th><td>E major</td><td>11B, 1B, 12A</td><td>7B</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="fineprint">Camelot codes are shown by many DJ apps and key detectors.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="next">
+        <div>
+          <h2>Know the key of every loop</h2>
+          <p>PitchScope finds the key of your loop and shows its Camelot code, plus the relative key and the runner-up. Its Camelot skin even takes the color of the key. It's free, for Windows.</p>
+          <div class="actions">
+            <a class="btn btn-download" href="../../pitchscope/">Get PitchScope</a>
+            <a class="btn btn-quiet" href="https://claeslanng.com">Hear Claes DJ</a>
+          </div>
+        </div>
+        <img src="../../assets/img/pitchscope/camelot-a-minor.jpg" width="840" height="600" loading="lazy" alt="PitchScope's Camelot skin, tinted for A minor, 8A">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Written by Claes Lanng, who makes the free plugins on this site. Notes are named with middle C as C4, like PitchScope; FL Studio's piano roll names them one octave higher.</p>
+    <nav aria-label="Footer">
+      <a href="../">All guides</a>
+      <a href="../../">All plugins</a>
+    </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var KEYS = {"1A": "G# minor (Ab minor)", "2A": "D# minor (Eb minor)", "3A": "Bb minor", "4A": "F minor", "5A": "C minor", "6A": "G minor", "7A": "D minor", "8A": "A minor", "9A": "E minor", "10A": "B minor", "11A": "F# minor", "12A": "C# minor", "1B": "B major", "2B": "F# major (Gb major)", "3B": "Db major", "4B": "Ab major", "5B": "Eb major", "6B": "Bb major", "7B": "F major", "8B": "C major", "9B": "G major", "10B": "D major", "11B": "A major", "12B": "E major"};
+  function wrap(n) { return ((n - 1) % 12 + 12) % 12 + 1; }
+  var segs = document.querySelectorAll("#wheel .seg");
+  var title = document.getElementById("w-title"), text = document.getElementById("w-text"), list = document.getElementById("w-list");
+  var mid = document.getElementById("wheel-mid"), mid2 = document.getElementById("wheel-mid2");
+  function select(code) {
+    var n = parseInt(code, 10), l = code.slice(-1), o = l === "A" ? "B" : "A";
+    var mixes = [[code, "Same key"], [wrap(n - 1) + l, "One step down"], [wrap(n + 1) + l, "One step up"], [n + o, l === "A" ? "Relative major" : "Relative minor"]];
+    var lift = wrap(n + 7) + l;
+    var ok = mixes.map(function (m) { return m[0]; });
+    segs.forEach(function (s) {
+      var c = s.getAttribute("data-code");
+      s.classList.toggle("is-sel", c === code);
+      s.classList.toggle("is-ok", c !== code && ok.indexOf(c) >= 0);
+      s.classList.toggle("is-lift", c === lift);
+      s.classList.toggle("is-dim", ok.indexOf(c) < 0 && c !== lift);
+    });
+    title.textContent = code + ": " + KEYS[code];
+    text.textContent = "Mixes smoothly with:";
+    list.innerHTML = mixes.slice(1).map(function (m) { return "<li><b>" + m[0] + "</b> " + KEYS[m[0]] + " <span>" + m[1] + "</span></li>"; }).join("") +
+      "<li><b>" + lift + "</b> " + KEYS[lift] + " <span>Energy lift, one semitone up</span></li>";
+    mid.textContent = code; mid2.textContent = KEYS[code].split(" (")[0];
+  }
+  segs.forEach(function (s) {
+    s.addEventListener("click", function () { select(s.getAttribute("data-code")); });
+    s.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(s.getAttribute("data-code")); } });
+  });
+  select("8A");
+})();
+</script>
+</body>
+</html>

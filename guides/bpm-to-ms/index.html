@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BPM to ms calculator: delay, reverb and sidechain times | Claes Lanng Plugins</title>
+<meta name="description" content="Type your tempo and get every note length in milliseconds: straight, dotted and triplet, from a whole bar to a 1/64 note. For delay, reverb and sidechain settings.">
+<meta property="og:title" content="BPM to ms calculator: delay, reverb and sidechain times">
+<meta property="og:description" content="Type your tempo and get every note length in milliseconds: straight, dotted and triplet, from a whole bar to a 1/64 note. For delay, reverb and sidechain settings.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/smartscope/main-share.jpg">
+<meta property="og:url" content="https://claeslanng.shop/guides/bpm-to-ms/">
+<meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/guides/bpm-to-ms/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/guides.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "BPM to ms calculator: delay, reverb and sidechain times",
+ "description": "Type your tempo and get every note length in milliseconds: straight, dotted and triplet, from a whole bar to a 1/64 note. For delay, reverb and sidechain settings.",
+ "url": "https://claeslanng.shop/guides/bpm-to-ms/",
+ "dateModified": "2026-11-24",
+ "author": {
+  "@type": "Person",
+  "name": "Claes Lanng",
+  "url": "https://claeslanng.com"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Claes Lanng Plugins",
+  "url": "https://claeslanng.shop/"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Guides",
+   "item": "https://claeslanng.shop/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "BPM to ms calculator",
+   "item": "https://claeslanng.shop/guides/bpm-to-ms/"
+  }
+ ]
+}
+</script>
+</head>
+<body class="theme-brand">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../../smartscope/">Smartscope</a>
+      <a href="../../pitchscope/">PitchScope</a>
+      <a href="../../flow-fmx-host/">Flow FMX Host</a>
+      <a href="../" aria-current="page">Guides</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">Guides</a></p>
+      <h1>BPM to ms calculator</h1>
+      <p class="answer">One beat lasts <strong>60,000 ÷ BPM</strong> milliseconds: 428.6 ms at 140 BPM. Type your tempo for every note length, straight, dotted and triplet.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="calc-title">
+    <div class="wrap">
+      <h2 id="calc-title" class="visually-hidden">Calculator</h2>
+      <div class="demo-box">
+        <div class="bpm-row">
+          <div>
+            <label class="small-label" for="bpm">Tempo</label>
+            <div class="bpm-input"><input id="bpm" type="number" inputmode="decimal" min="20" max="400" step="0.1" value="140"><span>BPM</span></div>
+          </div>
+          <div class="chips" aria-label="Typical tempos"><button type="button" class="chip" data-bpm="90">Hip-hop 90</button><button type="button" class="chip" data-bpm="113">Amapiano 113</button><button type="button" class="chip" data-bpm="124">House 124</button><button type="button" class="chip" data-bpm="140">Trap 140</button><button type="button" class="chip" data-bpm="174">Drum and bass 174</button></div>
+        </div>
+        <div class="table-scroll" style="margin-top:20px">
+          <table class="data on-paper" id="ms-table">
+            <thead><tr><th scope="col">Note</th><th scope="col">Straight</th><th scope="col">Dotted</th><th scope="col">Triplet</th><th scope="col">As a rate</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="fineprint">Dotted is 1.5 times as long, triplet two thirds. "As a rate" is the straight note in Hz, for LFOs and tremolo.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title">
+    <div class="wrap prose">
+      <h2 id="how-title">The formula</h2>
+      <p>One beat, a quarter note in 4/4, lasts <strong>60,000 ÷ BPM</strong> milliseconds. At 140 BPM that's 428.6 ms. Halve it for an 1/8 note, halve again for a 1/16, and multiply by four for a whole bar.</p>
+      <h3>What to use it for</h3>
+      <p><strong>Delay.</strong> Set the delay time to an 1/8 or a dotted 1/8 and the echoes land on the grid instead of smearing it. Most DAW delays can sync to tempo, but plugins that only take milliseconds need the number.</p>
+      <p><strong>Reverb pre-delay and decay.</strong> A pre-delay of a 1/32 or 1/64 note keeps the dry hit clear. A decay that ends before the next beat keeps the mix from washing out.</p>
+      <p><strong>Sidechain release.</strong> A release around a 1/16 or 1/8 note lets the bass come back before the next kick. Too short and it clicks, too long and the bass never recovers on fast patterns.</p>
+      <p><strong>Kick and 808 timing.</strong> A few milliseconds matter in the low end: an 808 that starts 10 ms late can cancel a kick on the same note. See <a href="../kick-808-phase/">Kick and 808 phase</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="table-title">
+    <div class="wrap">
+      <h2 id="table-title">Common tempos</h2>
+      <p class="intro">The most used note lengths at common tempos, rounded to 0.1 ms.</p>
+      <div class="table-scroll">
+      <table class="data" style="max-width:760px">
+        <thead><tr><th scope="col">BPM</th><th scope="col">1 bar</th><th scope="col">1/4 note</th><th scope="col">1/8 note</th><th scope="col">1/16 note</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">70</th><td>3429 ms</td><td>857.1 ms</td><td>428.6 ms</td><td>214.3 ms</td></tr>
+          <tr><th scope="row">80</th><td>3000 ms</td><td>750.0 ms</td><td>375.0 ms</td><td>187.5 ms</td></tr>
+          <tr><th scope="row">90</th><td>2667 ms</td><td>666.7 ms</td><td>333.3 ms</td><td>166.7 ms</td></tr>
+          <tr><th scope="row">100</th><td>2400 ms</td><td>600.0 ms</td><td>300.0 ms</td><td>150.0 ms</td></tr>
+          <tr><th scope="row">110</th><td>2182 ms</td><td>545.5 ms</td><td>272.7 ms</td><td>136.4 ms</td></tr>
+          <tr><th scope="row">120</th><td>2000 ms</td><td>500.0 ms</td><td>250.0 ms</td><td>125.0 ms</td></tr>
+          <tr><th scope="row">124</th><td>1935 ms</td><td>483.9 ms</td><td>241.9 ms</td><td>121.0 ms</td></tr>
+          <tr><th scope="row">128</th><td>1875 ms</td><td>468.8 ms</td><td>234.4 ms</td><td>117.2 ms</td></tr>
+          <tr><th scope="row">130</th><td>1846 ms</td><td>461.5 ms</td><td>230.8 ms</td><td>115.4 ms</td></tr>
+          <tr><th scope="row">140</th><td>1714 ms</td><td>428.6 ms</td><td>214.3 ms</td><td>107.1 ms</td></tr>
+          <tr><th scope="row">150</th><td>1600 ms</td><td>400.0 ms</td><td>200.0 ms</td><td>100.0 ms</td></tr>
+          <tr><th scope="row">160</th><td>1500 ms</td><td>375.0 ms</td><td>187.5 ms</td><td>93.8 ms</td></tr>
+          <tr><th scope="row">170</th><td>1412 ms</td><td>352.9 ms</td><td>176.5 ms</td><td>88.2 ms</td></tr>
+          <tr><th scope="row">174</th><td>1379 ms</td><td>344.8 ms</td><td>172.4 ms</td><td>86.2 ms</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="next">
+        <div>
+          <h2>See your timing in milliseconds</h2>
+          <p>Smartscope locks to your project's tempo, from a 1/16 note up to 4 bars. Zoom in and the grid switches to milliseconds, so you can see exactly where the kick and the bass start. It's free, for Windows.</p>
+          <div class="actions">
+            <a class="btn btn-download" href="../../smartscope/">Get Smartscope</a>
+          </div>
+        </div>
+        <img src="../../assets/img/smartscope/main-share.jpg" width="1200" height="413" loading="lazy" alt="Smartscope showing a kick in orange and the bass in gray over half a bar">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Written by Claes Lanng, who makes the free plugins on this site. Notes are named with middle C as C4, like PitchScope; FL Studio's piano roll names them one octave higher.</p>
+    <nav aria-label="Footer">
+      <a href="../">All guides</a>
+      <a href="../../">All plugins</a>
+    </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var input = document.getElementById("bpm"), tbody = document.querySelector("#ms-table tbody");
+  var NOTES = [["1 bar", 4], ["1/2 note", 2], ["1/4 note (one beat)", 1], ["1/8 note", 0.5], ["1/16 note", 0.25], ["1/32 note", 0.125], ["1/64 note", 0.0625]];
+  function fmt(ms) { return (ms >= 1000 ? ms.toFixed(0) : ms >= 100 ? ms.toFixed(1) : ms.toFixed(2)) + " ms"; }
+  function render() {
+    var bpm = parseFloat(input.value);
+    if (!(bpm >= 20 && bpm <= 400)) { tbody.innerHTML = '<tr><td colspan="5">Type a tempo between 20 and 400 BPM.</td></tr>'; return; }
+    var q = 60000 / bpm;
+    tbody.innerHTML = NOTES.map(function (n) {
+      var ms = q * n[1];
+      return '<tr><th scope="row">' + n[0] + "</th><td>" + fmt(ms) + "</td><td>" + fmt(ms * 1.5) + "</td><td>" + fmt(ms * 2 / 3) +
+        "</td><td>" + (1000 / ms).toFixed(ms > 1000 ? 3 : 2) + " Hz</td></tr>";
+    }).join("");
+    document.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", String(parseFloat(c.dataset.bpm) === bpm)); });
+  }
+  input.addEventListener("input", render);
+  document.querySelectorAll(".chip").forEach(function (c) {
+    c.addEventListener("click", function () { input.value = c.dataset.bpm; render(); });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
