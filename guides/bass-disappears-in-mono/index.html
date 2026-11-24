@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why your bass disappears in mono, and how to keep it | Claes Lanng Plugins</title>
+<meta name="description" content="Stereo tricks make a bass sound wide, then cancel it out on mono club systems and phone speakers. Hear it happen in a live demo, and how to keep your low end in mono.">
+<meta property="og:title" content="Why your bass disappears in mono, and how to keep it">
+<meta property="og:description" content="Stereo tricks make a bass sound wide, then cancel it out on mono club systems and phone speakers. Hear it happen in a live demo, and how to keep your low end in mono.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/flow/monosafe.png">
+<meta property="og:url" content="https://claeslanng.shop/guides/bass-disappears-in-mono/">
+<meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/guides/bass-disappears-in-mono/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/guides.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "Why your bass disappears in mono, and how to keep it",
+ "description": "Stereo tricks make a bass sound wide, then cancel it out on mono club systems and phone speakers. Hear it happen in a live demo, and how to keep your low end in mono.",
+ "url": "https://claeslanng.shop/guides/bass-disappears-in-mono/",
+ "dateModified": "2026-11-24",
+ "author": {
+  "@type": "Person",
+  "name": "Claes Lanng",
+  "url": "https://claeslanng.com"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Claes Lanng Plugins",
+  "url": "https://claeslanng.shop/"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Guides",
+   "item": "https://claeslanng.shop/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Bass in mono",
+   "item": "https://claeslanng.shop/guides/bass-disappears-in-mono/"
+  }
+ ]
+}
+</script>
+</head>
+<body class="theme-brand">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../../smartscope/">Smartscope</a>
+      <a href="../../pitchscope/">PitchScope</a>
+      <a href="../../flow-fmx-host/">Flow FMX Host</a>
+      <a href="../" aria-current="page">Guides</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">Guides</a></p>
+      <h1>Bass in mono</h1>
+      <p class="answer">Wide bass usually comes from making the left and right sides different. In mono they're <strong>added together</strong>, and the parts that point opposite ways cancel. Keep the low end in mono and check your mix in mono.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="demo-title">
+    <div class="wrap">
+      <h2 id="demo-title">Try it</h2>
+      <p class="intro">A bass note on A1 (55 Hz), made wide with the oldest trick there is: the right side plays a few milliseconds late. Listen in stereo, then in mono.</p>
+      <div class="demo-box">
+        <canvas id="mono-canvas" role="img" aria-label="How loud each frequency is when the left and right channels are added together"></canvas>
+        <p class="legend"><i style="background:#1A1511;height:3px"></i>Level in mono, by frequency &nbsp; <i style="background:#F25A22;height:8px;width:8px;border-radius:50%"></i>The bass note and its harmonics</p>
+        <div class="demo-controls">
+          <div>
+            <label for="m-delay">Right side late by <output id="m-delay-out">0.0 ms</output></label>
+            <input id="m-delay" type="range" min="0" max="20" step="0.1" value="9.1">
+          </div>
+          <div>
+            <p class="check"><input id="m-flip" type="checkbox"><label for="m-flip" style="margin:0;font-size:16px;color:inherit">Flip the right side's polarity</label></p>
+          </div>
+          <div class="seg-toggle" role="group" aria-label="Listen in">
+            <button type="button" class="btn btn-quiet" id="m-play-st" aria-pressed="false">Listen in stereo</button>
+            <button type="button" class="btn btn-quiet" id="m-play-mo" aria-pressed="false">Listen in mono</button>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div>First cancel at<b id="m-first">55 Hz</b></div>
+          <div>The 55 Hz note in mono<b id="m-fund">0.0 dB</b></div>
+        </div>
+      </div>
+      <p class="fineprint">Headphones help. The sound is quiet and stops after three seconds.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-title">
+    <div class="wrap prose">
+      <h2 id="why-title">Why it happens</h2>
+      <p>In mono, the left and right channels are simply added together. When both sides play the same thing at the same time, that just makes it louder. When one side is delayed or flipped, some frequencies arrive with their waves pointing the opposite way, and those cancel.</p>
+      <p>A delay of a few milliseconds cancels a whole row of frequencies, evenly spaced, starting at one over twice the delay. At 9.1 ms that's 55 Hz, right on the bass note, then 165 Hz, 275 Hz and up. Flipping one side's polarity is worse: in mono everything the two sides share disappears.</p>
+      <h3>Where people hear your track in mono</h3>
+      <p>More often than you'd think: a lot of club systems run the subwoofers in mono, and many phones, Bluetooth speakers and smart speakers play through a single speaker. A bass that's huge in your headphones can be thin or gone on all of those.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fix-title">
+    <div class="wrap">
+      <h2 id="fix-title">How to keep it</h2>
+      <p class="intro">Width is fine higher up. The low end is where it hurts.</p>
+      <dl class="features">
+        <div><dt>Keep the lows in mono</dt><dd>Keep the sub and the body of the bass in the center. If you want width, add it only above the low end, for example to the top of the bass or a layer an octave up.</dd></div>
+        <div><dt>Check in mono often</dt><dd>Put a mono switch or a utility plugin on the master and flip it while you mix. If the bass drops, find out which plugin is making it wide.</dd></div>
+        <div><dt>Watch stereo wideners and chorus</dt><dd>Wideners, chorus and short stereo delays all work by making the sides different. On a bass, they're the usual cause.</dd></div>
+        <div><dt>Use a widener that checks mono for you</dt><dd>A widener with a mono guard pulls the width back on its own in any band that would cancel out. That's what MonoSafe does.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="next">
+        <div>
+          <h2>Width that survives mono</h2>
+          <p>MonoSafe is a free four-band stereo widener with a built-in guard: it automatically pulls back the width in any band that would cancel out or lose level in mono. It's a free Flow plugin and runs in Flow FMX Host on Windows.</p>
+          <div class="actions">
+            <a class="btn btn-download" href="../../flow-fmx-host/#free-plugins">Get MonoSafe</a>
+          </div>
+        </div>
+        <img src="../../assets/img/flow/monosafe.png" width="876" height="727" loading="lazy" alt="MonoSafe, a four-band stereo widener, running in Flow FMX Effect">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Written by Claes Lanng, who makes the free plugins on this site. Notes are named with middle C as C4, like PitchScope; FL Studio's piano roll names them one octave higher.</p>
+    <nav aria-label="Footer">
+      <a href="../">All guides</a>
+      <a href="../../">All plugins</a>
+    </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
+  </div>
+</footer>
+<script>
+(function () {
+  var F0 = 55, HARM = 12;
+  var canvas = document.getElementById("mono-canvas"), delay = document.getElementById("m-delay"), flip = document.getElementById("m-flip");
+  var out = { delay: document.getElementById("m-delay-out"), first: document.getElementById("m-first"), fund: document.getElementById("m-fund") };
+  function state() { return { d: parseFloat(delay.value) / 1000, s: flip.checked ? -1 : 1 }; }
+  function gainDb(f, st) {   // mono sum (L+R)/2, R = s * L delayed by d
+    var re = 1 + st.s * Math.cos(2 * Math.PI * f * st.d), im = -st.s * Math.sin(2 * Math.PI * f * st.d);
+    var g = Math.sqrt(re * re + im * im) / 2;
+    return g < 0.001 ? -60 : 20 * Math.log10(g);
+  }
+  var FMIN = 20, FMAX = 1000, DBMIN = -30;
+  function draw() {
+    var st = state(), dpr = window.devicePixelRatio || 1, w = canvas.clientWidth, h = canvas.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    var g = canvas.getContext("2d"); g.scale(dpr, dpr); g.clearRect(0, 0, w, h);
+    var left = 34, bottom = h - 20, top = 8;
+    function X(f) { return left + (Math.log(f / FMIN) / Math.log(FMAX / FMIN)) * (w - left - 6); }
+    function Y(db) { return top + (Math.max(db, DBMIN) / DBMIN) * (bottom - top); }
+    g.font = "600 12px Archivo, sans-serif"; g.fillStyle = "#665D53"; g.strokeStyle = "#D3CCC0"; g.lineWidth = 1;
+    [0, -10, -20, -30].forEach(function (db) { var y = Y(db); g.beginPath(); g.moveTo(left, y); g.lineTo(w, y); g.stroke(); g.fillText(db + " dB", 0, y + 4); });
+    [20, 50, 100, 200, 500, 1000].forEach(function (f) { var x = X(f); g.fillText(f >= 1000 ? "1 kHz" : f + " Hz", x - 10, h - 3); });
+    g.strokeStyle = "#1A1511"; g.lineWidth = 2.5; g.beginPath();
+    for (var px = left; px <= w - 6; px++) {
+      var f = FMIN * Math.pow(FMAX / FMIN, (px - left) / (w - left - 6)), y = Y(gainDb(f, st));
+      if (px === left) g.moveTo(px, y); else g.lineTo(px, y);
+    }
+    g.stroke();
+    g.fillStyle = "#F25A22";
+    for (var k = 1; k <= HARM && F0 * k <= FMAX; k++) { g.beginPath(); g.arc(X(F0 * k), Y(gainDb(F0 * k, st)), k === 1 ? 6 : 4, 0, Math.PI * 2); g.fill(); }
+    out.delay.textContent = (st.d * 1000).toFixed(1) + " ms";
+    out.first.textContent = st.s < 0 && st.d === 0 ? "everything" : st.s < 0 ? "0 Hz, then every " + (1 / st.d).toFixed(0) + " Hz" :
+      st.d === 0 ? "nothing" : (1 / (2 * st.d)).toFixed(0) + " Hz";
+    var fd = gainDb(F0, st);
+    out.fund.textContent = fd <= -59.9 ? "silent" : (fd > -0.05 ? "0.0" : fd.toFixed(1)) + " dB";
+    out.fund.className = fd < -6 ? "bad" : "";
+  }
+  [delay, flip].forEach(function (el) { el.addEventListener("input", draw); });
+  window.addEventListener("resize", draw);
+  draw();
+
+  var ctx = null, playing = null, bSt = document.getElementById("m-play-st"), bMo = document.getElementById("m-play-mo");
+  function stop() {
+    if (!playing) return;
+    var p = playing; playing = null;
+    p.out.gain.setTargetAtTime(0, ctx.currentTime, 0.04);
+    p.osc.stop(ctx.currentTime + 0.3);
+    bSt.setAttribute("aria-pressed", "false"); bMo.setAttribute("aria-pressed", "false");
+  }
+  function play(mono, btn) {
+    var again = playing && playing.btn === btn;
+    stop();
+    if (again) return;
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === "suspended") ctx.resume();
+    var st = state(), t = ctx.currentTime;
+    var osc = ctx.createOscillator(); osc.type = "sawtooth"; osc.frequency.value = F0;
+    var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 700;
+    var outG = ctx.createGain();
+    outG.gain.setValueAtTime(0, t); outG.gain.linearRampToValueAtTime(0.12, t + 0.08);
+    outG.gain.setValueAtTime(0.12, t + 2.6); outG.gain.linearRampToValueAtTime(0, t + 3);
+    osc.connect(lp);
+    var dl = ctx.createDelay(0.1); dl.delayTime.value = st.d;
+    var pol = ctx.createGain(); pol.gain.value = st.s;
+    lp.connect(dl).connect(pol);
+    if (mono) {
+      var sum = ctx.createGain(); sum.gain.value = 0.5;
+      lp.connect(sum); pol.connect(sum); sum.connect(outG);
+    } else {
+      var merge = ctx.createChannelMerger(2);
+      lp.connect(merge, 0, 0); pol.connect(merge, 0, 1); merge.connect(outG);
+    }
+    outG.connect(ctx.destination);
+    osc.start(t); osc.stop(t + 3.05);
+    playing = { osc: osc, out: outG, btn: btn };
+    btn.setAttribute("aria-pressed", "true");
+    osc.onended = function () { if (playing && playing.osc === osc) { playing = null; btn.setAttribute("aria-pressed", "false"); } };
+  }
+  bSt.addEventListener("click", function () { play(false, bSt); });
+  bMo.addEventListener("click", function () { play(true, bMo); });
+})();
+</script>
+</body>
+</html>

@@ -147,12 +147,18 @@ settings rewrites or deletes that file.
 ## Guides (preview, branch `guides-preview`)
 
 Practical pages that bring search traffic and lead to a plugin. Brand theme (kraft + white
-label), extra styles in `assets/guides.css`, listen buttons from `assets/tone.js`
+label), extra styles in `assets/guides.css`. Every page's nav has a Guides link. The guides
+other than the note pages are plain HTML: edit them directly, listen buttons from `assets/tone.js`
 (`<button data-tone="46.25">`).
 
 ```
 guides/                         index of all guides
-guides/kick-808-phase/          hand-written, with the live phase demo -> Smartscope
+guides/kick-808-phase/          live phase demo -> Smartscope
+guides/tune-808-to-key/         5 steps + "which notes for my key" table -> PitchScope
+guides/bpm-to-ms/               tempo calculator + common-tempo table -> Smartscope
+guides/camelot-wheel/           clickable SVG wheel + all 24 codes -> PitchScope, claeslanng.com
+guides/flow-music-plugins-windows/  .fmx on Windows, steps + FAQ -> Flow FMX Host
+guides/bass-disappears-in-mono/ stereo/mono demo with a mono frequency plot -> MonoSafe
 guides/808-notes/               chart of every note C0-B2 (generated)
 guides/808-notes/<note>/        one page per note, e.g. f-sharp-1 (generated) -> PitchScope
 tools/make_note_pages.py        builds the chart and note pages; PUBLISH lists the notes

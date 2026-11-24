@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use Google Flow Music plugins in FL Studio on Windows | Claes Lanng Plugins</title>
+<meta name="description" content="Google's Flow Music plugins only run on macOS for now. Here's how to run your .fmx plugins in FL Studio on Windows, for free, with Flow FMX Host.">
+<meta property="og:title" content="How to use Google Flow Music plugins in FL Studio on Windows">
+<meta property="og:description" content="Google's Flow Music plugins only run on macOS for now. Here's how to run your .fmx plugins in FL Studio on Windows, for free, with Flow FMX Host.">
+<meta property="og:image" content="https://claeslanng.shop/assets/img/flow/studio-sampler.png">
+<meta property="og:url" content="https://claeslanng.shop/guides/flow-music-plugins-windows/">
+<meta name="theme-color" content="#5E4630">
+<link rel="canonical" href="https://claeslanng.shop/guides/flow-music-plugins-windows/">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/ArchivoNarrow_700Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/guides.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "How to use Google Flow Music plugins in FL Studio on Windows",
+ "description": "Google's Flow Music plugins only run on macOS for now. Here's how to run your .fmx plugins in FL Studio on Windows, for free, with Flow FMX Host.",
+ "url": "https://claeslanng.shop/guides/flow-music-plugins-windows/",
+ "dateModified": "2026-11-24",
+ "author": {
+  "@type": "Person",
+  "name": "Claes Lanng",
+  "url": "https://claeslanng.com"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Claes Lanng Plugins",
+  "url": "https://claeslanng.shop/"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Guides",
+   "item": "https://claeslanng.shop/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Flow Music plugins on Windows",
+   "item": "https://claeslanng.shop/guides/flow-music-plugins-windows/"
+  }
+ ]
+}
+</script>
+</head>
+<body class="theme-brand">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="../../" aria-label="Claes Lanng Plugins, home">Claes Lanng <span>Plugins</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="../../smartscope/">Smartscope</a>
+      <a href="../../pitchscope/">PitchScope</a>
+      <a href="../../flow-fmx-host/">Flow FMX Host</a>
+      <a href="../" aria-current="page">Guides</a>
+      <a href="https://github.com/claeslanng">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="../">Guides</a></p>
+      <h1>Flow Music plugins on Windows</h1>
+      <p class="answer">Google's own Flow plugins run on <strong>macOS only</strong> for now. To use a Flow Music plugin (.fmx) in FL Studio on Windows, load it in Flow FMX Host, a free VST3 that opens .fmx files.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-title">
+    <div class="wrap prose">
+      <h2 id="what-title">What a Flow plugin is</h2>
+      <p>Google Flow Music lets you describe an instrument or effect in plain words, build it in a Space, and since <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/">October 6, 2026</a> export it as a plugin for your DAW. The export is an <code>.fmx</code> file. On a Mac you drop it onto Google's Flow Instrument or Flow Effect plugin.</p>
+      <p>Google's plugins only run on macOS for now, and Google hasn't said when Windows is coming. The <code>.fmx</code> file itself isn't tied to the Mac, though, and that's where Flow FMX Host comes in.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="panel panel-grid">
+        <div>
+          <h2 id="steps-title">Run it in FL Studio</h2>
+          <p>Needs Windows 10 or 11 (64-bit) and the Microsoft Edge WebView2 Runtime, which almost every Windows PC already has. Takes a few minutes.</p>
+        </div>
+        <ol class="steps">
+          <li><span><strong>Get an .fmx file.</strong> Build one in Flow Music: ask for an instrument or effect and use the word "plugin" or "VST", then download the build. Or start with one of the <a href="../../flow-fmx-host/#free-plugins">three free Flow plugins</a>.</span></li>
+          <li><span><strong>Install Flow FMX Host.</strong> Download <code>FlowFMX-Windows-x64.zip</code>, unzip it, and copy both <code>.vst3</code> folders into <code>C:\Program Files\Common Files\VST3</code>.</span></li>
+          <li><span><strong>Find it in FL Studio.</strong> Open <strong>Options</strong>, then <strong>Manage plugins</strong>, and click <strong>Find more plugins</strong>.</span></li>
+          <li><span><strong>Pick instrument or effect.</strong> Synths and samplers go in Flow FMX Instrument, in the Channel Rack. Effects go in Flow FMX Effect, in a mixer slot.</span></li>
+          <li><span><strong>Load the .fmx.</strong> Click <strong>Load Your Plugin</strong> and choose the file, or drag it onto the window. Its own interface opens, and every control shows up in FL Studio for automation.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <div class="wrap prose">
+      <h2 id="faq-title">Common questions</h2>
+      <h3>Does it sound the same as on a Mac?</h3>
+      <p>Flow FMX Host runs the plugin's own sound engine and shows the interface it was designed with. Nothing is re-created or approximated.</p>
+      <h3>The plugin window is blank</h3>
+      <p>Install the Evergreen WebView2 Runtime from Microsoft, then reopen the plugin. The interface is drawn with WebView2.</p>
+      <h3>What if I move the .fmx file?</h3>
+      <p>Nothing breaks. The .fmx is saved inside your FL Studio project, so the project still opens if the file moves or you send the project to someone else.</p>
+      <h3>Does it work in Ableton, Reaper or other DAWs?</h3>
+      <p>Flow FMX Host is a standard VST3, made and tested for FL Studio. Other VST3 hosts on Windows may work, but they aren't tested yet. If you try one, <a href="mailto:djclaeslanng@gmail.com">tell me how it went</a>.</p>
+      <h3>Is it made by Google?</h3>
+      <p>No. Flow FMX Host is free and open source, made by Claes Lanng Plugins, and isn't affiliated with or endorsed by Google.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="next">
+        <div>
+          <h2>Your Flow plugins, on Windows</h2>
+          <p>Flow FMX Host opens .fmx files from Google Flow Music inside FL Studio on Windows, with three free Flow plugins to start with. It's free and open source.</p>
+          <div class="actions">
+            <a class="btn btn-download" href="../../flow-fmx-host/">Get Flow FMX Host</a>
+          </div>
+        </div>
+        <img src="../../assets/img/flow/studio-sampler.png" width="875" height="725" loading="lazy" alt="Studio Sampler, an instrument made in Google Flow Music, running inside FL Studio">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Written by Claes Lanng, who makes the free plugins on this site. Notes are named with middle C as C4, like PitchScope; FL Studio's piano roll names them one octave higher.</p>
+    <nav aria-label="Footer">
+      <a href="../">All guides</a>
+      <a href="../../">All plugins</a>
+    </nav>
+    <p class="maker">Claes Lanng Plugins is made by <a href="https://claeslanng.com">Claes Lanng</a>, a DJ and producer from Copenhagen. Questions or problems? Email <a href="mailto:djclaeslanng@gmail.com">djclaeslanng@gmail.com</a>. Like the plugins? <a href="https://www.patreon.com/claeslanng">Support them on Patreon</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
