@@ -164,6 +164,11 @@ guides/808-notes/<note>/        one page per note, e.g. f-sharp-1 (generated) ->
 tools/make_note_pages.py        builds the chart and note pages; PUBLISH lists the notes
 ```
 
+FL Studio facts confirmed by the owner (2026-11-24, his screenshot in
+`assets/img/guides/fl-root-note.webp`): the root note is set by right-clicking a key on the
+keyboard in the second Channel settings tab (envelope icon); the label reads "Root note:
+D#5"; the "Fine tune" slider sits next to it. He sets the root in FL's default octave (D#5).
+
 Rules for every guide:
 - Answer the question in the first sentence, with the number (people and AI tools quote it).
 - Every number is calculated or checked, never guessed. Note pages get all their numbers
