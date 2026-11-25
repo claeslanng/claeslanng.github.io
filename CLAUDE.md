@@ -181,6 +181,15 @@ Rules for every guide:
 - Add new guides to `guides/index.html` and `sitemap.xml`, and to the "Guides" section at the
   bottom of the plugin page it leads to (`.related` cards, styles in `site.css`).
 
+## Patreon
+Each plugin also has a free, public Patreon post (in his "Free plugins" collection), linked from
+the hero fine print of its page ("Questions and updates on Patreon"):
+- Smartscope: https://www.patreon.com/claeslanng/posts/smartscope-free-176248736
+- PitchScope: https://www.patreon.com/claeslanng/posts/pitchscope-free-176300222
+- Flow FMX Host: https://www.patreon.com/claeslanng/posts/flow-fmx-host-in-176300568
+Patreon shop products can't be free (minimum $3), so free plugins go out as public posts that
+link to the site's download, not an uploaded zip (one download to update, counted by GoatCounter).
+
 ## Visitor stats
 GoatCounter (no cookies, no consent banner needed), site code `claeslanng`: dashboard at
 https://claeslanng.goatcounter.com. Every page has its script tag just before `</head>`
